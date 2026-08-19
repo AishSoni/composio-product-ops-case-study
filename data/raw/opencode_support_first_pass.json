@@ -1,0 +1,375 @@
+[
+  {
+    "id": 11,
+    "name": "Zendesk",
+    "category": "Support and Helpdesk",
+    "one_line": "All-in-one customer service and support platform with ticketing, help center, and messaging, backed by a mature, broadly documented developer platform.",
+    "auth_methods": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "14-day free trial, no credit card required, self-serve registration (zendesk.com/register). API tokens created in Admin Center; OAuth clients via Admin Center or API. Startup program offers free access for qualified startups."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "community",
+      "note": "Full v2 REST API across Ticketing, Help Center, Guide, Talk, Chat, and Sell. OAuth access tokens (Bearer) recommended; legacy API tokens use Basic auth and are being deprecated in favor of OAuth. No official first-party MCP server published; Zendesk docs cover acting as an MCP client and mention Zendesk can act as an MCP server, and multiple community MCP servers exist."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.zendesk.com/documentation/authentication/",
+      "access_url": "https://www.zendesk.com/free-trial/",
+      "api_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm OAuth 2.0 (authorization code + PKCE, global OAuth for public apps) and Basic-auth API tokens; API tokens now deprecated in favor of OAuth per security-and-auth docs. Free trial verified on zendesk.com/free-trial. MCP: no first-party server URL found in vendor docs; community servers (e.g., markusvankempen/zendesk-mcp) exist. API breadth broad."
+  },
+  {
+    "id": 12,
+    "name": "Intercom",
+    "category": "Support and Helpdesk",
+    "one_line": "Customer communication and support platform with shared inbox, proactive messaging, and a broad REST API plus a hosted official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Self-serve workspace signup and free trial available via app.intercom.com; Access Token auto-provisioned when creating a developer app in the Developer Hub. OAuth used for public apps accessing other workspaces."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API at api.intercom.io with Bearer auth (Access Token for private apps, OAuth for public apps). Official hosted MCP server at mcp.intercom.com (US) / mcp.eu.intercom.com (EU), streamable HTTP, OAuth or token auth; exposes ~6-30 tools for conversations, contacts, tickets."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "access_url": "https://www.intercom.com/pricing",
+      "api_url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io",
+      "mcp_url": "https://developers.intercom.com/docs/guides/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Official Intercom docs confirm Access Token (Bearer) for private apps and OAuth 2.0 for public apps with region-specific auth endpoints. Official MCP server documented at developers.intercom.com/docs/guides/mcp and github.com/intercom/intercom-mcp-server; currently US and EU hosted workspaces. API reference covers users, companies, conversations, contacts, events, tickets, and more."
+  },
+  {
+    "id": 13,
+    "name": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "one_line": "Omnichannel helpdesk and ticketing platform from Freshworks with a documented v2 REST API and an official (EAP) MCP integration.",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free trial of paid plans plus a free Sprout plan, but API keys/functionality are NOT available on the Sprout plan (per Freshdesk support article 225435). API keys are per-agent under Profile Settings."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "v2 REST API at {domain}.freshdesk.com/api/v2 using Basic auth with personal API key (no OAuth support for the Freshdesk API per Freshworks community). Official Freshworks MCP server exists but is in Beta/EAP, Enterprise plan only, API-key auth only; several community MCP servers also exist."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.freshdesk.com/api/",
+      "access_url": "https://www.freshworks.com/freshdesk/pricing/",
+      "api_url": "https://developer.freshdesk.com/api/",
+      "mcp_url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-"
+    },
+    "confidence": "high",
+    "research_notes": "Freshdesk API docs confirm Basic auth using API key (apikey:X base64) or username/password; API key location documented in support article 225435 (not on Sprout plan). Freshworks community thread confirms no OAuth for Freshdesk API as of latest responses. Official MCP integration is EAP/Beta for Enterprise plan only; token set via API key header."
+  },
+  {
+    "id": 14,
+    "name": "Front",
+    "category": "Support and Helpdesk",
+    "one_line": "Shared-inbox customer communication platform with a comprehensive Core API, app framework, and an official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free developer accounts available self-serve (front.com/signup?affiliate=developers) with a sandbox environment (limited to 3 teammates). Production use requires a paid Front account; OAuth required for public App Store integrations."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Core API at api2.frontapp.com with Bearer tokens via API token (Settings > Developers) or OAuth 2.0 authorization code flow (required for public apps). Official MCP server documented in dev.frontapp.com/docs/mcp-server; uses user-scoped tokens, any teammate can authorize."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://dev.frontapp.com/docs/authentication",
+      "access_url": "https://front.com/signup?affiliate=developers",
+      "api_url": "https://dev.frontapp.com/reference",
+      "mcp_url": "https://dev.frontapp.com/docs/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Front dev docs confirm two auth paths: API tokens and OAuth 2.0 (authorization code, refresh tokens, Basic auth for token endpoint). Official MCP server is first-party (dev.frontapp.com/docs/mcp-server), user-scoped so any teammate can authorize. Core API reference covers conversations, messages, contacts, inboxes, accounts, and more. Free developer account verified in welcome docs."
+  },
+  {
+    "id": 15,
+    "name": "Pylon",
+    "category": "Support and Helpdesk",
+    "one_line": "B2B customer support and customer-ops platform built around Slack/chat with a REST API (OpenAPI) and a hosted official MCP server.",
+    "auth_methods": [
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "No permanent free plan (starts ~$59/seat/mo with 3-seat min, annual), but a free trial is offered; self-serve signup via app.usepylon.com. Only Admin users can create API tokens."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON",
+        "OpenAPI"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API at api.usepylon.com, Bearer API-token auth only (no OAuth on the REST API). OpenAPI 3.0 reference covers ~22 resource groups (issues, accounts, contacts, users, KB, tasks, etc.). Official hosted MCP server at mcp.usepylon.com (OAuth 2.0/AuthKit, streamable HTTP); 11 documented tools; MCP has no customer-facing reply tool (that requires REST POST /issues/{id}/reply)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "access_url": "https://www.usepylon.com/pricing",
+      "api_url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+      "mcp_url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Pylon docs confirm Bearer API token auth (admins only) for the REST API and OAuth-only for the hosted MCP server. Pricing/trial confirmed via usepylon.com/pricing and AWS marketplace listing; no free tier. MCP server is first-party and requires admin enablement plus Member/Admin seat with MCP Access role."
+  },
+  {
+    "id": 16,
+    "name": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "one_line": "Multi-channel help desk and live chat platform with REST API v1/v3 and a built-in official MCP server.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free trial and self-serve signup; paid plans from ~$9/agent/mo. API keys generated under Configuration > System > API (v1 and v3 keys are separate and version-specific)."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON",
+        "OpenAPI"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v1 (deprecated, per-request apikey) and v3 (current, apikey header, OpenAPI/Swagger descriptor for SDK generation) covering tickets, conversations, agents, reports, KB, and more. Official built-in MCP server at https://<domain>/api/mcp (streamable HTTP, Bearer token or OAuth 2.1 with PKCE)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://support.liveagent.com/741982-API-key",
+      "access_url": "https://www.liveagent.com/pricing/",
+      "api_url": "https://support.liveagent.com/911737-API-v3",
+      "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+    },
+    "confidence": "high",
+    "research_notes": "Official LiveAgent support articles confirm API key auth for v1/v3, API v3 documentation hosted per-account (Configuration > System > API), and a built-in MCP server with Bearer token or OAuth 2.1 auth. Swagger/OpenAPI descriptor available for SDK generation. MCP actions run under the agent's identity and permissions."
+  },
+  {
+    "id": 17,
+    "name": "Plain",
+    "category": "Support and Helpdesk",
+    "one_line": "API-first B2B support platform whose product is literally built on its own GraphQL API, plus an official MCP server.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "7-day free trial, no credit card required (per plain.com/pricing); no permanent free plan (starts ~$35/seat/mo). API keys created under Settings > Machine Users with fine-grained permissions."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "GraphQL",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Single GraphQL endpoint core-api.uk.plain.com/graphql/v1 with Bearer API key (plainApiKey_ prefix) issued to Machine Users; schema downloadable and SDK available (@team-plain/graphql). Official MCP server at mcp.plain.com/mcp (OAuth, ~30 read/write tools for threads, customers, tenants, help center)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.plain.com/docs/graphql/authentication",
+      "access_url": "https://www.plain.com/pricing",
+      "api_url": "https://www.plain.com/docs/graphql/introduction",
+      "mcp_url": "https://plain.support.site/article/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Plain docs confirm API-key (Bearer) auth via Machine Users, GraphQL-only API with no documented limitations vs UI, and a first-party MCP server using OAuth (no API keys needed). 7-day free trial confirmed on plain.com/pricing; no free tier. MCP article lists 30 tools across threads, customers, tenants, help center, and user/workspace."
+  },
+  {
+    "id": 18,
+    "name": "Help Scout",
+    "category": "Support and Helpdesk",
+    "one_line": "Email-first shared-inbox help desk with Mailbox (Inbox) and Docs APIs and an official, generally available (read-only) MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free trial with self-serve signup; paid plans (Standard/Plus/Pro) include API access. OAuth2 app created under Your Profile > My Apps; Docs API uses a per-user API key with Basic auth."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON",
+        "HAL"
+      ],
+      "breadth": "moderate",
+      "mcp": "official",
+      "note": "Inbox API 2.0 at api.helpscout.net/v2 with OAuth 2.0 (Authorization Code and Client Credentials flows), HAL+JSON. Docs API v1 uses API-key Basic auth. Official MCP server at mcp.helpscout.net/mcp is GA but read-only for new connections; report tools require Plus/Pro plans."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+      "access_url": "https://www.helpscout.com/pricing/",
+      "api_url": "https://developer.helpscout.com/mailbox-api/",
+      "mcp_url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports"
+    },
+    "confidence": "high",
+    "research_notes": "Help Scout developer docs confirm OAuth 2.0 only for the Mailbox/Inbox API (no static API key), Client Credentials for internal integrations, and Docs API via per-user API key (Basic). Official MCP server launched GA (articles.helpscout.com/blog/introducing-help-scout-mcp/), read-only, per-user OAuth, requires Standard+ plan (API access). Breadth moderate vs Zendesk/Intercom given two separate APIs."
+  },
+  {
+    "id": 19,
+    "name": "Gorgias",
+    "category": "Support and Helpdesk",
+    "one_line": "E-commerce helpdesk for Shopify brands with a REST API (API key or OAuth2) and a first-party MCP server now in open beta.",
+    "auth_methods": [
+      "API key",
+      "OAuth2",
+      "Basic"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free trial with self-serve signup; no free plan (paid from ~$10/agent/mo). API keys created under Settings > REST API; OAuth2 required for public apps via the Gorgias developer portal."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API at {subdomain}.gorgias.com/api with HTTP Basic (email + API key) for private apps or OAuth2 Bearer tokens for public apps. Official MCP server at mcp.gorgias.com/mcp (open beta, all paid plans, OAuth, exposes tickets, tags, macros, help center, AI Agent settings)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.gorgias.com/reference/authentication",
+      "access_url": "https://www.gorgias.com/pricing",
+      "api_url": "https://developers.gorgias.com/reference",
+      "mcp_url": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546"
+    },
+    "confidence": "high",
+    "research_notes": "Gorgias dev docs confirm API key via HTTP Basic for private apps and mandatory OAuth2 for public apps (authorization code + refresh tokens). Official MCP is first-party and in open beta per updates.gorgias.com and the MCP help article; URL mcp.gorgias.com/mcp with optional subdomain param. REST reference is broad (tickets, customers, orders, macros, rules, help center, etc.)."
+  },
+  {
+    "id": 20,
+    "name": "Gladly",
+    "category": "Support and Helpdesk",
+    "one_line": "Enterprise 'ticketless' CX platform built around people/conversations with a REST API; access is primarily sales-led.",
+    "auth_methods": [
+      "token",
+      "Basic"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "Core Gladly platform is demo/sales-led with no self-serve signup (pricing page is a 'Get a demo' gate; contracts via Order Form). A self-serve path exists only via the Gladly Shopify app (30-day free trial, usage-based). API requires an admin to grant the 'API User' permission per agent."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "unclear",
+      "note": "REST API at {organization}.gladly.com/api/v1 using token-based Basic authentication (agent email + API token); no OAuth on the API. Documented resources cover conversations, customers, people, tasks, webhooks, and a Lookup Adaptor. No official first-party MCP server found; only third-party connectors (e.g., Truto gateway) expose Gladly via MCP."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.gladly.com/rest/",
+      "access_url": "https://www.gladly.com/pricing",
+      "api_url": "https://developer.gladly.com/rest/",
+      "mcp_url": null
+    },
+    "confidence": "medium",
+    "research_notes": "Gladly developer docs confirm token-based Basic auth with API User permission and API token creation flow. Access to the core platform is sales/demo-gated (gladly.com/pricing shows only 'Get a demo'), so self-serve onboarding is not available; Shopify app offers a limited self-serve trial. No official MCP server located in first-party sources as of research date; third-party gateway (Truto) provides an MCP path. Confidence medium due to sales-led access and negative-space MCP finding."
+  }
+]

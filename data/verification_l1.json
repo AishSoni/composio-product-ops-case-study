@@ -1,0 +1,267 @@
+{
+  "checked": 385,
+  "live": 348,
+  "dead": 37,
+  "errors": 0,
+  "results": [
+    {
+      "id": 11,
+      "field": "access_url",
+      "url": "https://www.zendesk.com/free-trial/",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 11,
+      "field": "mcp_url",
+      "url": "https://github.com/zendesk/zendesk_mcp",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 13,
+      "field": "access_url",
+      "url": "https://www.freshworks.com/freshdesk/pricing/",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 23,
+      "field": "access_url",
+      "url": "https://api-console.zoho.com/",
+      "status": "400",
+      "live": false
+    },
+    {
+      "id": 24,
+      "field": "access_url",
+      "url": "https://open.larksuite.com/",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 26,
+      "field": "api_url",
+      "url": "https://docs.discord.com/developers/docs/intro",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 26,
+      "field": "mcp_url",
+      "url": "https://github.com/mckaywrigley/discord-mcp",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 29,
+      "field": "mcp_url",
+      "url": "https://github.com/aircall/aircall-mcp",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 30,
+      "field": "access_url",
+      "url": "https://ui.idp.vonage.com/sign-up/dashboard",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 30,
+      "field": "api_url",
+      "url": "https://developer.vonage.com/",
+      "status": "400",
+      "live": false
+    },
+    {
+      "id": 32,
+      "field": "mcp_url",
+      "url": "https://mcp.facebook.com/ads",
+      "status": "401",
+      "live": false
+    },
+    {
+      "id": 37,
+      "field": "access_url",
+      "url": "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 37,
+      "field": "mcp_url",
+      "url": "https://mcp.systeme.io/mcp",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 44,
+      "field": "auth_url",
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/get-started-with-ocapi.html",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 44,
+      "field": "api_url",
+      "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 47,
+      "field": "mcp_url",
+      "url": "https://github.com/ecwid/mcp-ecwid",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 48,
+      "field": "api_url",
+      "url": "https://api.gumroad.com/v2",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 49,
+      "field": "mcp_url",
+      "url": "https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 53,
+      "field": "access_url",
+      "url": "https://app.ahrefs.com/account/api-keys",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 57,
+      "field": "api_url",
+      "url": "https://docs.brightdata.com/api-reference/introduction",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 66,
+      "field": "access_url",
+      "url": "https://neo4j.com/cloud/auradb/",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 72,
+      "field": "mcp_url",
+      "url": "https://airtable.com/developers/web/guides/mcp-server-overview",
+      "status": "404",
+      "live": false
+    },
+    {
+      "id": 78,
+      "field": "mcp_url",
+      "url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 80,
+      "field": "mcp_url",
+      "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 85,
+      "field": "mcp_url",
+      "url": "https://mcp.ipayx.ai/mcp",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 86,
+      "field": "auth_url",
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 86,
+      "field": "access_url",
+      "url": "https://developer.intuit.com",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 86,
+      "field": "api_url",
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/api",
+      "status": "405",
+      "live": false
+    },
+    {
+      "id": 90,
+      "field": "auth_url",
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 90,
+      "field": "access_url",
+      "url": "https://pitchbook.com/products/direct-access-data/api",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 90,
+      "field": "api_url",
+      "url": "https://pitchbook.com/help/PitchBook-api",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 92,
+      "field": "api_url",
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 92,
+      "field": "mcp_url",
+      "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 94,
+      "field": "auth_url",
+      "url": "https://consensus.app/api-mcp/",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 94,
+      "field": "access_url",
+      "url": "https://consensus.app/home/api/",
+      "status": "403",
+      "live": false
+    },
+    {
+      "id": 96,
+      "field": "access_url",
+      "url": "https://devin.ai/pricing",
+      "status": "429",
+      "live": false
+    },
+    {
+      "id": 98,
+      "field": "auth_url",
+      "url": "https://www.npmjs.com/package/@mermaid-js/mermaid-cli",
+      "status": "403",
+      "live": false
+    }
+  ]
+}

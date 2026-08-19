@@ -1,0 +1,346 @@
+[
+  {
+    "id": 51,
+    "name": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Pay-as-you-go SEO & SERP data API (SERP, keywords, on-page, backlinks, business data) with official client libraries and a hosted MCP server.",
+    "auth_methods": [
+      "Basic",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free account signup with free unlimited trial credits (pay-as-you-go after); API credentials (login/password) are auto-generated in the dashboard's API Access tab."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v3 across SERP, keyword data, on-page, backlinks, and appendix endpoints; official PHP/Python/C#/Java/TypeScript clients; OpenAPI spec; hosted MCP at mcp.dataforseo.com/v3/mcp plus OSS server repo."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.dataforseo.com/v3/auth/",
+      "access_url": "https://app.dataforseo.com/api-access",
+      "api_url": "https://docs.dataforseo.com/v3/",
+      "mcp_url": "https://dataforseo.com/model-context-protocol"
+    },
+    "confidence": "high",
+    "research_notes": "REST API itself uses HTTP Basic auth only (no OAuth for direct API calls); OAuth2 only surfaces via the hosted MCP connection flow. Free unlimited trial documented in official getting-started docs. OpenAPI spec and official MCP GitHub (dataforseo/mcp-server-typescript) confirmed."
+  },
+  {
+    "id": 52,
+    "name": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "one_line": "SEO/SEM platform exposing a unified Data + Project REST API (keywords, backlinks, audits, rank tracking, AI search) and an official hosted MCP server.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free trial signup (no credit card); API key created self-serve in the API Dashboard, but Data API credits require an active plan/add-on."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Data API + Project API unified under one key at api.seranking.com; OpenAPI specs in github.com/seranking/openapi; official hosted MCP (seranking.com/api/integrations/mcp) plus GitHub repo and ChatGPT connector."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://seranking.com/api/data/getting-started/",
+      "access_url": "https://seranking.com/sign-up.html",
+      "api_url": "https://seranking.com/api/data/reference/",
+      "mcp_url": "https://seranking.com/api/integrations/mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Auth via 'Authorization: Token <key>' header or 'apikey' query param; rate limit 10 req/s; 180+ SEO/GEO tools via official MCP. API credits are plan-dependent per official docs and knowledge base."
+  },
+  {
+    "id": 53,
+    "name": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "one_line": "SEO data platform with API v3 REST (keywords, backlinks, rankings, brand monitoring), OAuth 2.0 via Ahrefs Connect, and an official hosted MCP server.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Direct API keys are self-serve for paid Ahrefs subscribers (workspace owners/admins, up to 1000 keys); Ahrefs Connect OAuth program is application/approval gated for partner apps; free public test endpoints exist."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "API v3 (Bearer API key) covering 20+ products incl. Site Explorer, Keywords Explorer, Site Audit, Rank Tracker, Brand Radar; OpenAPI spec; official MCP documented at docs.ahrefs.com with hosted OAuth (scope apiv3-mcp)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management",
+      "access_url": "https://app.ahrefs.com/account/api-keys",
+      "api_url": "https://docs.ahrefs.com/en/api/docs/introduction",
+      "mcp_url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth 2.0 authorization-code + PKCE only via the Ahrefs Connect partner program (requires application/approval and paid users); direct API uses Bearer API keys with 1-year lifetime and per-key monthly API-unit limits. MCP page and Connect docs verified first-party."
+  },
+  {
+    "id": 54,
+    "name": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Web scraping SaaS (AI scraper, no-code bots, structured data extraction) with a token-auth REST API and an official hosted MCP server.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Self-serve account; token-based usage plans; API tokens generated in the dashboard (API Tokens). Free-plan availability not confirmed from official docs."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "official",
+      "note": "REST endpoints for scraper management, V3 platform, sync endpoints, and analytics; API token in 'x-api-token' header (query param for analytics); hosted MCP at mcp.mrscraper.com/mcp with Bearer token auth."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.mrscraper.com/docs/api/authentication",
+      "access_url": "https://docs.mrscraper.com/docs/getting-started/api-token",
+      "api_url": "https://docs.mrscraper.com/docs/api/overview",
+      "mcp_url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Official docs confirm x-api-token header auth, analytics query-param auth, token generation flow, and a hosted MCP server. Usage is metered by tokens (plan tokens vs API tokens)."
+  },
+  {
+    "id": 55,
+    "name": "Apify",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Cloud web-scraping/automation platform (60K+ ready-made actors) with a token-auth REST API, SDKs, and an official hosted MCP server with OAuth.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan with monthly free credits, self-serve signup; API token under API & Integrations in the Apify Console."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v2 for Actors, tasks, storages, webhooks; official JS/Python SDKs; official MCP server hosted at mcp.apify.com (Streamable HTTP + OAuth or Bearer token) and OSS repo apify/apify-mcp-server."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://console.apify.com/settings/integrations",
+      "access_url": "https://console.apify.com/",
+      "api_url": "https://docs.apify.com/api/v2",
+      "mcp_url": "https://docs.apify.com/integrations/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "MCP supports hosted OAuth, Bearer token, or local stdio (npx @apify/actors-mcp-server); legacy SSE transport removed April 2026 in favor of Streamable HTTP; unauthenticated MCP tools available for actor discovery/docs."
+  },
+  {
+    "id": 56,
+    "name": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Web scraping/crawling API (scrape, crawl, map, search, extract, deep research) with an official OSS and hosted MCP server, OAuth, and a keyless free tier.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Keyless free tier for search/scrape/parse within daily limits; API keys created self-serve in the app; paid plans self-serve."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API for scrape/crawl/map/search/extract/parse; official MCP server (github firecrawl/firecrawl-mcp-server) and hosted endpoint mcp.firecrawl.dev/v2/mcp supporting keyless, OAuth, and Bearer API key."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.firecrawl.dev/app/api-keys",
+      "access_url": "https://www.firecrawl.dev/",
+      "api_url": "https://docs.firecrawl.dev/api-reference",
+      "mcp_url": "https://docs.firecrawl.dev/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "API key sent as 'Authorization: Bearer' (also x-firecrawl-api-key); hosted MCP issues OAuth access tokens (fco_*) via firecrawl.dev authorization server; keyless mode limited to search/scrape/parse tools per official docs."
+  },
+  {
+    "id": 57,
+    "name": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Web data platform (proxies, Web Unlocker, Scraping Browser, SERP API, datasets) with REST API (Bearer key), native proxy auth, and an official MCP server with free tier.",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free sign-up with 5,000 free requests/month; API key auto-created on account creation and managed in account settings; native proxy username/password access also available."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API for Web Unlocker, SERP API, Scraping Browser, datasets/scrapers; OpenAPI with bearerAuth; official MCP server (github brightdata/brightdata-mcp) remote or self-hosted, documented at docs.brightdata.com."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.brightdata.com/api-reference/authentication",
+      "access_url": "https://brightdata.com/cp/setting/users",
+      "api_url": "https://docs.brightdata.com/api-reference/introduction",
+      "mcp_url": "https://docs.brightdata.com/ai/mcp-server/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Two auth modes confirmed: API key as Bearer token for REST, or native proxy username/password (brd-customer-<id>-zone-<name>:<password>) for proxy protocol; MCP server authenticates with API token only (mcp.brightdata.com/mcp?token=...)."
+  },
+  {
+    "id": 58,
+    "name": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Open-source OSINT CLI (sherlock-project/sherlock) that hunts social-media accounts by username across 400+ platforms.",
+    "auth_methods": [
+      "other"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Fully open-source (MIT), free to run locally via pip/uv/pipx/Docker; no account or hosted service required."
+    },
+    "api": {
+      "documented": false,
+      "protocols": [],
+      "breadth": "narrow",
+      "mcp": "community",
+      "note": "No official hosted API or credentials; functionality is a local CLI. Community MCP servers (e.g., Burnsedia/sherlock-mcp) wrap the CLI, and an Apify Actor wraps it for cloud runs."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://github.com/sherlock-project/sherlock",
+      "access_url": "https://github.com/sherlock-project/sherlock",
+      "api_url": "https://github.com/sherlock-project/sherlock/tree/master/docs",
+      "mcp_url": "https://github.com/Burnsedia/sherlock-mcp"
+    },
+    "confidence": "medium",
+    "research_notes": "Identity is ambiguous across vendors named 'Sherlock' (sherlock-project OSINT CLI, sherlocklabs.io enrichment, MX Sherlock fintech, Sherlock audit tool). Treated as sherlock-project/sherlock, the widely known scraping/OSINT tool in this category. Integration is by running the CLI as a subprocess; only community MCP wrappers exist."
+  },
+  {
+    "id": 59,
+    "name": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "one_line": "B2B contact/company data API (prospecting, contact/company enrichment, email verification) with REST and a downloadable OpenAPI 3.1 spec.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Self-serve signup and pricing exist, but official docs state the API key is 'provided in your contract', implying keys are provisioned through an account/vendor relationship."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "none_found",
+      "note": "REST API (mostly async job-based: prospector, contact/company/phone enrichment, search, job change, email verification, account reporter) with x-api-key auth, webhooks, and OpenAPI 3.1 spec; no official MCP found in docs."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.waterfall.io/v1/authentication",
+      "access_url": "https://waterfall.io/",
+      "api_url": "https://docs.waterfall.io/v1/introduction",
+      "mcp_url": null
+    },
+    "confidence": "medium",
+    "research_notes": "Docs confirm x-api-key header auth and OpenAPI spec download; no official MCP server found. Access status is the main uncertainty (docs say keys come via contract), so confidence is medium."
+  },
+  {
+    "id": 60,
+    "name": "Clay",
+    "category": "Data, SEO and Scraping",
+    "one_line": "GTM data platform (200+ data sources, searches, enrichments, workflows, Claygent) with a Public API (API key) and an official OAuth-based MCP server.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Self-serve signup (paid plans); Public API keys (beta) created in workspace settings; MCP access via self-service OAuth Dynamic Client Registration with no Clay-side approval."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST Public API (searches, routines, workflows, enrichments, functions) with interactive reference; official MCP server at api.clay.com/v3/mcp using OAuth 2.0 authorization-code + PKCE with self-service DCR."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.clay.com/public-api/authentication",
+      "access_url": "https://developers.clay.com/quickstart",
+      "api_url": "https://developers.clay.com/",
+      "mcp_url": "https://university.clay.com/docs/connect-to-clay-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Public API auth via 'clay-api-key' header; MCP uses authorization-code + PKCE (device flow also supported for the CLI via clay login --device); OAuth DCR is open with no approval step; access tokens last 1 hour with rotating refresh tokens."
+  }
+]

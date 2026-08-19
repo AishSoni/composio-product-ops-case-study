@@ -1,0 +1,350 @@
+[
+  {
+    "id": 1,
+    "name": "Salesforce",
+    "category": "CRM and Sales",
+    "one_line": "Enterprise cloud CRM/sales platform with free Developer Edition orgs, OAuth2 REST API, and an official Agentforce MCP server.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free self-serve Developer Edition org (developer.salesforce.com/signup, 5MB data) with full REST API access; production Sales/Service Cloud require paid plans."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API with SOQL, metadata, bulk, and events plus a deep partner ecosystem; official Agentforce MCP server (github.com/salesforce-misc/agentforce-mcp-server)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm",
+      "access_url": "https://developer.salesforce.com/signup",
+      "api_url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_dev_org.htm",
+      "mcp_url": "https://github.com/salesforce-misc/agentforce-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Free Developer Edition signup and REST quickstart verified via developer.salesforce.com REST API docs; quickstart_oauth.htm returned 403 to bot fetch (bot-block, canonical URL, not a 404). Agentforce MCP repo returned in search results."
+  },
+  {
+    "id": 2,
+    "name": "HubSpot",
+    "category": "CRM and Sales",
+    "one_line": "All-in-one free-forever CRM (up to 2 users) with OAuth2/private-app-token REST API and an official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free CRM is genuinely free forever for up to 2 users, no credit card (app.hubspot.com/signup-hubspot/crm, vendor-confirmed $0/mo); paid tiers from ~$7-15/seat/mo."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Full REST API across marketing/sales/service/CMS/operations hubs with webhooks and batch endpoints; official MCP server documented at developers.hubspot.com/ai-tools/mcp."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+      "access_url": "https://app.hubspot.com/signup-hubspot/crm",
+      "api_url": "https://developers.hubspot.com/docs/api/overview",
+      "mcp_url": "https://developers.hubspot.com/ai-tools/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Auth (OAuth2 + private app access tokens) and MCP pages verified from developers.hubspot.com; free CRM plan (2 users, $0, no credit card) verified from hubspot.com/pricing/crm and hubspot.com/products/crm; signup URL referenced by vendor pages."
+  },
+  {
+    "id": 3,
+    "name": "Pipedrive",
+    "category": "CRM and Sales",
+    "one_line": "Sales pipeline CRM with a 14-day free trial, API-token or OAuth2 REST API, and only a community MCP server.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "14-day free trial, no credit card (pipedrive.com/en/register, vendor-confirmed); no permanent free plan; paid Lite from ~$14/seat/mo billed annually."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "REST API v1 (developers.pipedrive.com/docs/api/v1) with x-api-token header or OAuth2 and webhooks; no official MCP found, community WillDent/pipedrive-mcp-server exists."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+      "access_url": "https://www.pipedrive.com/en/register",
+      "api_url": "https://developers.pipedrive.com/docs/api/v1",
+      "mcp_url": "https://github.com/WillDent/pipedrive-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Auth concepts (x-api-token), OAuth2 overview, and 'how to find the API token' verified from pipedrive.readme.io; 14-day trial/register page verified from pipedrive.com/en/register and /en/pricing; MCP is community (no official found in searches)."
+  },
+  {
+    "id": 4,
+    "name": "Attio",
+    "category": "CRM and Sales",
+    "one_line": "Developer-first relationship CRM with a free-forever tier (3 seats), OAuth2/API-key REST API, and an official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Genuine free-forever plan (up to 3 seats, 3 objects, 50k records) plus paid Plus (~$29/seat/mo), Pro, and Enterprise; start free at attio.com/pricing."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API (objects/records/lists, webhooks) at docs.attio.com/rest-api/overview; official MCP server documented at docs.attio.com/mcp/overview."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.attio.com/rest-api/guides/authentication",
+      "access_url": "https://attio.com/pricing",
+      "api_url": "https://docs.attio.com/rest-api/overview",
+      "mcp_url": "https://docs.attio.com/mcp/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Auth (OAuth2 + API key) verified from docs.attio.com; official MCP page verified and links the REST API overview; free tier limits (3 seats/50k records) confirmed from attio.com/pricing and secondary sources."
+  },
+  {
+    "id": 5,
+    "name": "Twenty",
+    "category": "CRM and Sales",
+    "one_line": "Open-source CRM that is free to self-host (or free cloud trial) with Bearer API-key/OAuth REST API and an official per-workspace MCP endpoint.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Self-hosted open-source (free) or 14-day cloud trial with no credit card; cloud Pro from ~$9/user/mo; sign up at app.twenty.com/welcome."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API with generated OpenAPI spec (docs.twenty.com/api-reference/openapi.json); official MCP server at {workspace-url}/mcp supporting both OAuth and Bearer API key."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.twenty.com/developers/extend/api",
+      "access_url": "https://twenty.com/pricing",
+      "api_url": "https://docs.twenty.com/api-reference/openapi.json",
+      "mcp_url": "https://docs.twenty.com/user-guide/ai/capabilities/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "API docs (Bearer API key/OAuth, OpenAPI) verified from docs.twenty.com/developers/extend/api; official MCP page fetched directly (OAuth + API-key auth, endpoint per workspace); pricing/trial verified from twenty.com/pricing and app.twenty.com/welcome."
+  },
+  {
+    "id": 6,
+    "name": "Podio",
+    "category": "CRM and Sales",
+    "one_line": "Progress's customizable work/Collaboration platform with a free plan (5 users, 100 items), OAuth2 API, and an official MCP server at mcp.podio.com.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan usable 'for an unlimited time' (5 employees, 100 items) confirmed on vendor pricing/docs; 30-day Premium trial in-product; Plus ~$11.20 and Premium ~$19.20 per user/mo (annual)."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API (developers.podio.com/doc) covering items, apps, tasks, and contacts; official 22-tool MCP server at mcp.podio.com/mcp documented by Progress, usable with OAuth or a Podio API key."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.podio.com/authentication",
+      "access_url": "https://www.progress.com/podio/pricing",
+      "api_url": "https://developers.podio.com/doc",
+      "mcp_url": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 flows verified from developers.podio.com/authentication; free plan (unlimited time, 100 items) verified from progress.com/podio/documentation and /podio/pricing; official MCP server (mcp.podio.com, 22 tools, OAuth or API key) verified from the Progress MCP integration guide."
+  },
+  {
+    "id": 7,
+    "name": "Zoho CRM",
+    "category": "CRM and Sales",
+    "one_line": "Highly customizable cloud CRM free for 3 users, with an OAuth2 REST API (v8) and official pre-built MCP servers.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free edition for up to 3 users, no time limit, with API access (~5,000 API calls/day); paid Standard from ~$14/seat/mo (annual); signup at zoho.com/crm/signup.html?plan=free."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v8 with CRUD on all modules, COQL, bulk, and webhooks (zoho.com/crm/developer/docs/api/v8/); official pre-built MCP servers (Data Insights, Data Operations, Module Customization, Workflow) with OAuth."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+      "access_url": "https://www.zoho.com/crm/zohocrm-pricing.html",
+      "api_url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "mcp_url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 overview (v8) verified from zoho.com developer docs; free-3-user pricing page and free signup verified from zoho.com/crm/zohocrm-pricing.html; official MCP overview page fetched directly (four pre-built servers, OAuth-based). Self-Client OAuth also documented at zoho.com/developer/oauth/self-client/overview.html."
+  },
+  {
+    "id": 8,
+    "name": "Close",
+    "category": "CRM and Sales",
+    "one_line": "Inside-sales CRM with API-key or OAuth2 REST API, a 14-day free trial, and an official vendor-hosted MCP server.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "14-day free trial, no credit card (app.close.com/signup); no permanent free plan; paid plans from ~$29-49/user/mo."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API (api.close.com/api/v1) with webhooks/events and LeadIQ-style objects; official MCP server documented at developer.close.com/mcp (mcp.close.com)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.close.com/api/overview/oauth-authentication",
+      "access_url": "https://app.close.com/signup/",
+      "api_url": "https://developer.close.com/",
+      "mcp_url": "https://developer.close.com/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 page fetched directly (authorize/token/revoke endpoints, Bearer auth); developer.close.com homepage verified for API key + OAuth2 + MCP; free-trial signup URL verified in earlier search results ('Try for Free')."
+  },
+  {
+    "id": 9,
+    "name": "Copper",
+    "category": "CRM and Sales",
+    "one_line": "Google Workspace-native CRM with API-key or OAuth2 REST API and a 14-day trial; only community MCP servers found.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "14-day free trial, no credit card, no permanent free plan; paid tiers from ~$9-23/seat/mo (annual); start at copper.com/pricing."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "REST API v1 (developer.copper.com) with webhooks and person/company/opportunity/lead objects; no official MCP found, community dazanza/copper-mcp exists."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.copper.com/introduction/authentication.html",
+      "access_url": "https://www.copper.com/pricing",
+      "api_url": "https://developer.copper.com/",
+      "mcp_url": "https://github.com/dazanza/copper-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Auth (API Keys + OAuth2.0) verified from developer.copper.com/introduction/authentication.html; pricing/trial verified from copper.com/pricing plus secondary sources (no free plan, 14-day no-credit-card trial); MCP is community-only (no official found in searches)."
+  },
+  {
+    "id": 10,
+    "name": "DealCloud",
+    "category": "CRM and Sales",
+    "one_line": "Intapp's enterprise deal & relationship intelligence platform for PE/IB with OAuth2/API-key REST access and an official MCP server; sales-gated access.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "No self-serve signup, free plan, or trial; requires an existing DealCloud tenant plus a Platform Manager/admin to enable an API key (api.docs.dealcloud.com/docs/apikeys); purchased via demo/sales at intapp.com/dealcloud."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API at api.docs.dealcloud.com with OAuth2 token endpoint {baseUrl}/api/rest/v1/oauth/token (client_id/client_secret) and API-key option; official DealCloud MCP Server (client preview from July 2026) plus Intapp Celeste connector docs."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Access requires an existing enterprise DealCloud tenant and Platform Manager/admin approval to enable an API key; no self-serve signup or free trial (partner/sales-gated)."
+    },
+    "evidence": {
+      "auth_url": "https://api.docs.dealcloud.com/sdk/csharp/authentication",
+      "access_url": "https://www.intapp.com/dealcloud",
+      "api_url": "https://api.docs.dealcloud.com/",
+      "mcp_url": "https://api.docs.dealcloud.com/mcp"
+    },
+    "confidence": "medium",
+    "research_notes": "OAuth2 (client_id/client_secret, token endpoint) verified from api.docs.dealcloud.com SDK auth docs; API-key enablement requiring Platform Manager/admin verified from api.docs.dealcloud.com/docs/apikeys; official MCP Server page (July 2026 client preview) verified from api.docs.dealcloud.com/mcp and Intapp Celeste connector docs; access/sales-gating based on intapp.com/dealcloud (demo-only, no pricing) and secondary sources. Enterprise docs and preview MCP lower confidence."
+  }
+]

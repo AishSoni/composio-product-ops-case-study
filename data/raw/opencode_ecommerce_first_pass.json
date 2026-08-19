@@ -1,0 +1,355 @@
+[
+  {
+    "id": 41,
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "one_line": "Hosted multi-channel commerce platform with a GraphQL-first Admin API, Storefront APIs, and a large app ecosystem.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free Shopify Partner/Developer Dashboard to build custom or public apps; Admin API access is free, though live stores require a paid merchant plan. No approval gate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Shopify MCP servers: Shopify Dev MCP (with Anthropic) and per-store Storefront/Customer Accounts MCP endpoints; REST Admin API is legacy, GraphQL preferred."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://shopify.dev/docs/api/usage/authentication",
+      "access_url": "https://shopify.dev/docs/apps/build/scaffold-app",
+      "api_url": "https://shopify.dev/docs/api/admin-graphql",
+      "mcp_url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 authorization code/token exchange and client-credentials grant; legacy API-key/password auth deprecated. Official docs at shopify.dev confirm scope-based OAuth and first-party MCP support."
+  },
+  {
+    "id": 42,
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "one_line": "Open-source WordPress ecommerce plugin exposing a comprehensive REST API for products, orders, customers, and inventory.",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "WooCommerce itself is free; any store owner/administrator generates consumer key + secret under WooCommerce > Settings > Advanced > REST API with no approval required."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Native WooCommerce MCP integration via WordPress MCP Adapter (currently developer preview); numerous community servers also exist."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "access_url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "api_url": "https://developer.woocommerce.com/docs/apis/rest-api",
+      "mcp_url": "https://developer.woocommerce.com/docs/features/mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Auth is consumer key/secret: HTTP Basic over HTTPS or OAuth 1.0a one-legged over HTTP. Official docs on developer.woocommerce.com confirm methods, and MCP integration is documented as a first-party feature."
+  },
+  {
+    "id": 43,
+    "name": "BigCommerce",
+    "category": "Ecommerce",
+    "one_line": "Multi-channel hosted ecommerce platform with REST (v2/v3) and GraphQL APIs plus webhooks and a marketplace app program.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Store owners create store-level API accounts (client_id/secret/access_token) in the control panel; trial stores can also create API accounts. No approval gate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official BigCommerce Storefront MCP server documented on docs.bigcommerce.com; admin/merchant-side access relies on community connectors."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+      "access_url": "https://support.bigcommerce.com/s/article/Store-API-Accounts",
+      "api_url": "https://developer.bigcommerce.com/docs/api-reference",
+      "mcp_url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Store-level API accounts authenticate with X-Auth-Token header; marketplace apps use OAuth 2.0 grant flow. Dev docs confirm three OAuth-based API account types and official MCP server."
+  },
+  {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "one_line": "Enterprise B2C commerce platform (SFCC) exposing Open Commerce API (OCAPI) and newer Salesforce Commerce APIs for headless retail.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "Requires a licensed SFCC instance; API clients are provisioned via Account Manager by an org administrator. No public self-serve developer tier."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official B2C DX MCP Server under Salesforce's commercecloud GitHub org (SCAPI, cartridges, MRT, Storefront Next tooling); community OCAPI-based servers also exist."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Requires a licensed Salesforce B2C Commerce instance plus Account Manager API-client provisioning and OCAPI/SCAPI configuration in Business Manager."
+    },
+    "evidence": {
+      "auth_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/get-started-with-ocapi.html",
+      "access_url": "https://help.salesforce.com/s/articleView?id=cc.b2c_ocapi_client_authentication_and_authorization.htm&language=en_US&type=5",
+      "api_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi",
+      "mcp_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "OCAPI uses OAuth 2.0 client-credentials with a client ID/password from Account Manager; SLAS offers JWT-based auth. Official developer docs confirm flows and Salesforce's MCP server."
+  },
+  {
+    "id": 45,
+    "name": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "one_line": "Commerce platform (Magento Open Source and Adobe Commerce) with REST, SOAP, and GraphQL web APIs for full store management.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Magento Open Source is free and self-hosted; admins create Integrations in the Admin to obtain tokens without approval. Adobe Commerce itself is a paid license."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL",
+        "SOAP"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Adobe announced an official Commerce MCP server (2026) with an Experience League overview; several community MCP servers also exist."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+      "access_url": "https://developer.adobe.com/commerce/webapi/rest",
+      "api_url": "https://developer.adobe.com/commerce/webapi/rest",
+      "mcp_url": "https://experienceleague.adobe.com/en/docs/commerce-learn/ai-and-agentic-commerce/commerce-mcp/commerce-mcp-overview"
+    },
+    "confidence": "high",
+    "research_notes": "Supports OAuth 1.0a for third-party apps, integration access tokens, and admin/customer tokens; Adobe Commerce Cloud Service uses Adobe IMS auth. Verified via developer.adobe.com."
+  },
+  {
+    "id": 46,
+    "name": "Squarespace",
+    "category": "Ecommerce",
+    "one_line": "Website-builder and commerce platform with Commerce APIs for products, orders, inventory, transactions, and webhooks.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Commerce APIs require a Commerce (Advanced/Premium) paid plan; merchants generate API keys in site Settings > Developer API Keys. No approval, but plan-gated."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "No official Squarespace MCP server found; community MCP servers exist. Commerce API covers orders, products, inventory, transactions, profiles, webhooks."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+      "access_url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+      "api_url": "https://developers.squarespace.com/commerce-apis/overview",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Official developers.squarespace.com docs confirm API-key auth for self-integrations, OAuth for extensions/partner apps, and plan-gated access (Business+ for Forms, Commerce Advanced/Premium for commerce APIs)."
+  },
+  {
+    "id": 47,
+    "name": "Ecwid",
+    "category": "Ecommerce",
+    "one_line": "Multi-channel ecommerce platform (Lightspeed) with a REST API, app marketplace, and native/external app OAuth flows.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free Ecwid account exists, but full REST API access generally requires the paid Venture plan or higher; single-store custom apps expose secret/public tokens in the app dashboard."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Ecwid's GitHub org maintains an official MCP server (github.com/ecwid/mcp-ecwid) for catalog, orders, inventory, customers, and analytics."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+      "access_url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+      "api_url": "https://api-docs.ecwid.com/reference/overview",
+      "mcp_url": "https://github.com/ecwid/mcp-ecwid"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 for native/external apps (authorization-code token exchange) plus secret/public tokens for own-store custom apps; bearer tokens in Authorization header. Verified via official Ecwid docs/GitHub."
+  },
+  {
+    "id": 48,
+    "name": "Gumroad",
+    "category": "Ecommerce",
+    "one_line": "Creator commerce platform for selling digital products, memberships, and courses with REST API v2 (products, sales, subscribers, payouts).",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free Gumroad account; personal access tokens generated in Settings > Advanced > Applications without approval; OAuth for third-party apps."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "No official Gumroad MCP server found; community MCP servers exist (e.g., rmarescu/gumroad-mcp)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://gumroad.com/api",
+      "access_url": "https://gumroad.com/api",
+      "api_url": "https://api.gumroad.com/v2",
+      "mcp_url": "https://github.com/rmarescu/gumroad-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Official gumroad.com/api confirms OAuth 2.0 + manually generated access tokens, Bearer auth, scopes (account, edit_products, view_sales, etc.), and REST/JSON v2 API."
+  },
+  {
+    "id": 49,
+    "name": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "one_line": "Amazon's official REST API for sellers/vendors to automate orders, listings, inventory, pricing, and financials.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "Must register as an SP-API developer (Seller Central/Vendor Central), register an application, and request SP-API roles; restricted/PII roles require additional approval."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Amazon ships an official SP-API MCP (Dev Assistant + Workflow servers, npm @amazon-sp-api-release/sp-api-dev-mcp, preview); many community servers also exist."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Gated on SP-API developer registration and per-role approval (restricted roles exposing PII need extra qualification); setup needs LWA credentials and AWS IAM role."
+    },
+    "evidence": {
+      "auth_url": "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
+      "access_url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+      "api_url": "https://developer-docs.amazon.com/sp-api/",
+      "mcp_url": "https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Login with Amazon (LWA) OAuth 2.0 issues 1-hour access tokens + long-lived refresh tokens; AWS SigV4 request signing requirement was removed Oct 2023. Confirmed via official developer-docs.amazon.com."
+  },
+  {
+    "id": 50,
+    "name": "fanbasis",
+    "category": "Ecommerce",
+    "one_line": "Creator monetization / merchant-of-record platform (payments, subscriptions, checkout sessions, payouts) with public API docs at apidocs.fan.",
+    "auth_methods": [
+      "other"
+    ],
+    "access": {
+      "status": "unclear",
+      "note": "Public API reference at apidocs.fan and an enterprises page advertise REST API, SDKs, and Zapier, but the fuller dev docs (dev-docs.fanbasis.com) are password-gated; account/API provisioning flow not fully verifiable."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "none_found",
+      "note": "No official or notable community MCP server found; only a Zapier-hosted MCP connector (zapier.com/mcp/fanbasis). API covers checkout sessions, customers, subscribers, products, transactions, refunds, disputes, webhooks."
+    },
+    "buildability": {
+      "verdict": "unclear",
+      "blocker": "API exists and is publicly documented, but authentication method and credential provisioning for API access could not be verified from first-party sources."
+    },
+    "evidence": {
+      "auth_url": "https://apidocs.fan/",
+      "access_url": "https://www.fanbasis.com/enterprises",
+      "api_url": "https://apidocs.fan/",
+      "mcp_url": null
+    },
+    "confidence": "low",
+    "research_notes": "apidocs.fan (FanBasis API Reference) confirms REST API, SDKs (Node/Python/PHP/Ruby), Postman collection, and webhooks; exact auth (API key vs token) and signup-to-API-access path remain unverified, so auth/access are marked unclear."
+  }
+]

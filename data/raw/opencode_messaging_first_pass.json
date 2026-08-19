@@ -1,0 +1,354 @@
+[
+  {
+    "id": 21,
+    "name": "Slack",
+    "category": "Communications and Messaging",
+    "one_line": "Enterprise team messaging and collaboration platform with a comprehensive developer platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Anyone can create a Slack app at api.slack.com/apps; free workspace tier exists. Installing apps to a workspace can require workspace admin approval depending on org settings."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official hosted MCP server at mcp.slack.com (launched Feb 17, 2026 per docs.slack.dev changelog) plus slackapi/slack-mcp-server; apps must explicitly enable the MCP toggle."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.slack.dev/authentication/installing-with-oauth",
+      "access_url": "https://api.slack.com/apps",
+      "api_url": "https://docs.slack.dev/reference/",
+      "mcp_url": "https://docs.slack.dev/ai/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Verified against docs.slack.dev OAuth/installing-with-oauth and api.slack.com scope pages. Web API (REST, api.slack.com) plus Events API (WebSocket); bot and user tokens. Official MCP launch confirmed in docs.slack.dev changelog 2026/02/17."
+  },
+  {
+    "id": 22,
+    "name": "Twilio",
+    "category": "Communications and Messaging",
+    "one_line": "Cloud communications platform (CPaaS) for programmatic SMS, voice, WhatsApp, and video via REST APIs.",
+    "auth_methods": [
+      "Basic",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Self-serve signup with free trial credit; production requires a paid account and, for some channels, provisioned/registered phone numbers (e.g., US 10DLC/A2P registration)."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official docs MCP server at mcp.twilio.com/docs (read-only search of 1,800+ endpoints, no auth) plus twilio-labs/mcp for executing API calls with API keys."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+      "access_url": "https://www.twilio.com/try-twilio",
+      "api_url": "https://www.twilio.com/docs/usage/api",
+      "mcp_url": "https://www.twilio.com/docs/ai/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "REST API uses HTTP Basic auth with API Key+Secret (recommended) or AccountSID+AuthToken. Official MCP server is documentation search only; execution server lives in twilio-labs/mcp repo. Trial credit and self-serve signup verified on twilio.com."
+  },
+  {
+    "id": 23,
+    "name": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "one_line": "Zoho's team chat and collaboration app with a REST API, bots, and integrations across the Zoho suite.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available; app/bot creation via the Zoho API Console (api-console.zoho.com) is self-serve. Within an org, admins control app access and approvals."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "official",
+      "note": "Official Zoho MCP platform (mcp.zoho.com) covers Cliq, and Zoho publishes a dedicated Cliq MCP server guide (cliq.zoho.com/mcp-server.html)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.zoho.com/cliq/help/restapi/v3/oauth/",
+      "access_url": "https://api-console.zoho.com/",
+      "api_url": "https://www.zoho.com/cliq/help/restapi/v2/introduction/",
+      "mcp_url": "https://www.zoho.com/cliq/mcp-server.html"
+    },
+    "confidence": "high",
+    "research_notes": "OAuth2 with access token passed in Authorization: Zoho-oauthtoken header; API root cliq.zoho.com/api/v2 (v3 documented). Scopes cover chats, messages, attachments, reminders, bots, bot messages. Nine regional data-center domains documented. MCP server supports OAuth and user-level permissions."
+  },
+  {
+    "id": 24,
+    "name": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "one_line": "Larksuite's all-in-one collaboration suite (messaging, docs, calendar, drive) with a broad open-platform API.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free tier available; custom apps/bots are created self-serve on open.larksuite.com. Publishing to the app store requires review; self-built apps are immediate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official lark-openapi-mcp (github.com/larksuite/lark-openapi-mcp) wraps the Open Platform APIs as MCP tools; marked Beta."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+      "access_url": "https://open.larksuite.com/",
+      "api_url": "https://open.larksuite.com/document/home/index",
+      "mcp_url": "https://github.com/larksuite/lark-openapi-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "App ID+secret yield tenant_access_token; user_access_token via OAuth2 (redirect flow). Official server SDKs in Go, Python, Java, Node.js. IM, docs, calendar, drive, messaging cards covered. Note Feishu (China, open.feishu.cn) vs Lark international (open.larksuite.com) are separate platforms. MCP currently Beta per README."
+  },
+  {
+    "id": 25,
+    "name": "Pumble",
+    "category": "Communications and Messaging",
+    "one_line": "CAKE.com's free team-chat app (channels, threads, calls) with a REST integration API and an official MCP server.",
+    "auth_methods": [
+      "API key",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free unlimited plans; the API is available on all plans and API/custom addons are installed self-serve in the workspace."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "official",
+      "note": "Official MCP server documented in Pumble help center, served at mcp.pumble.com/mcp over HTTP using token + x-app-token headers."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.pumble.com/",
+      "access_url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+      "api_url": "https://docs.pumble.com/",
+      "mcp_url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Integration API (docs.pumble.com, OpenAPI 3.1) requires two headers: token (user/bot access token) and x-app-token (xpat- app token). API addon generates API keys (Api-Key header) for simple send/list operations. Node SDK (cake-com.github.io/pumble-node-sdk). Official MCP connects to https://mcp.pumble.com/mcp and its tool list depends on addon scopes."
+  },
+  {
+    "id": 26,
+    "name": "Discord",
+    "category": "Communications and Messaging",
+    "one_line": "Community chat and voice platform with a large bot ecosystem, REST API, and real-time Gateway.",
+    "auth_methods": [
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Any Discord account can create applications in the Developer Portal without special approval; privileged gateway intents are toggled per app. A bot must be invited to a server by an admin."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket"
+      ],
+      "breadth": "broad",
+      "mcp": "community",
+      "note": "No first-party Discord MCP server as of mid-2026; ecosystem is community implementations (discord-agent-mcp, @iqai/mcp-discord, etc.)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.discord.com/developers/platform/oauth2-and-permissions",
+      "access_url": "https://discord.com/developers/applications",
+      "api_url": "https://docs.discord.com/developers/docs/intro",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Bot tokens authenticate as Authorization: Bot <token>; OAuth2 covers user authorization and webhooks. Gateway WebSocket for real-time events; per-route and global (50 req/s) rate limits. docs.discord.com confirms bot tokens and OAuth2. Multiple MCP directories confirm there is no official Discord MCP server, only community builds."
+  },
+  {
+    "id": 27,
+    "name": "Telegram",
+    "category": "Communications and Messaging",
+    "one_line": "Messaging app whose official Bot API lets anyone build bots over plain HTTPS using a token.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Bots are created free via @BotFather with no approval required; the full Bot API is available immediately with rate limits (~30 msgs/sec)."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "community",
+      "note": "No official Telegram MCP server; community servers wrap the Bot API (e.g., tgbot-mcp, IQAIcom/mcp-telegram)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://core.telegram.org/bots/api",
+      "access_url": "https://t.me/BotFather",
+      "api_url": "https://core.telegram.org/bots/api",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "All requests are https://api.telegram.org/bot<token>/METHOD_NAME; incoming updates via getUpdates (long polling) or setWebhook; free with documented limits. core.telegram.org also lists the lower-level Telegram API/TDLib for building full clients. No first-party MCP found."
+  },
+  {
+    "id": 28,
+    "name": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "one_line": "Meta's WhatsApp Business Platform (Cloud API) for businesses to send and receive messages at scale over the Graph API.",
+    "auth_methods": [
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "Requires a verified Meta Business account, a WhatsApp Business Account (WABA), and a registered phone number; business verification review (days) gates production. Messaging is billed per conversation."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "No official Meta MCP server for WhatsApp; several community servers wrap the Cloud API."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Meta business verification plus WABA/phone provisioning required before production; the 24-hour customer-service window and pre-approved templates constrain outbound messaging."
+    },
+    "evidence": {
+      "auth_url": "https://developers.facebook.com/docs/whatsapp/business-management-api/get-started",
+      "access_url": "https://developers.facebook.com/docs/whatsapp/",
+      "api_url": "https://developers.facebook.com/docs/whatsapp/cloud-api/",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Cloud API is hosted by Meta (graph.facebook.com/<PHONE_NUMBER_ID>/messages). Temporary tokens expire in 24h; permanent system-user tokens via OAuth client-credentials-style flow. Only two permissions needed (whatsapp_business_management, whatsapp_business_messaging). Business-initiated messages require approved templates; messaging tiers scale from 1,000 to unlimited contacts/24h. Postman collection and Meta docs confirm flows."
+  },
+  {
+    "id": 29,
+    "name": "Aircall",
+    "category": "Communications and Messaging",
+    "one_line": "Cloud call-center and business phone platform with a REST API for calls, contacts, SMS, users, and teams.",
+    "auth_methods": [
+      "Basic",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "7-day free trial with self-serve signup (no credit card); no permanent free plan. Essentials starts at $30/license with a 3-license minimum; API keys are generated in the dashboard."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "No official Aircall MCP server; community implementations exist (e.g., themobilefirstco/aircall-mcp-server, which is explicitly not an Aircall product)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.aircall.io/docs/basic-authentication",
+      "access_url": "https://aircall.io/pricing/",
+      "api_url": "https://developer.aircall.io/api-references",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Public API at api.aircall.io/v1. Basic auth uses Base64(api_id:api_token) for internal/private integrations; OAuth2 (scope=public_api) for tech-partner marketplace apps, which requires a partner signup. Generating API keys requires an Aircall account (admin role). Rate limit 120 req/min per company. Webhooks supported."
+  },
+  {
+    "id": 30,
+    "name": "Vonage",
+    "category": "Communications and Messaging",
+    "one_line": "Communications APIs (SMS, voice, WhatsApp, video, verify) with REST, JWT auth, SIP, and an official docs MCP server.",
+    "auth_methods": [
+      "API key",
+      "Basic",
+      "token"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free self-serve signup with trial credit; paid usage after. Some channels (e.g., WhatsApp) additionally require Meta approval/registration."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket",
+        "SIP"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Vonage Documentation MCP server (developer.vonage.com/en/mcp-server/overview); documentation-search only, no API execution."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+      "access_url": "https://ui.idp.vonage.com/sign-up/dashboard",
+      "api_url": "https://developer.vonage.com/",
+      "mcp_url": "https://developer.vonage.com/en/mcp-server/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Auth per product: API key+secret (Basic, Base64) for SMS/Numbers/Verify; JWT for Messages, Voice, and Verify v2; SIP trunking uses digest auth with API key/secret. WebSocket used for real-time voice streaming. Free trial with credit and self-serve dashboard confirmed. Official MCP server (github.com/Vonage/vonage-mcp-server-documentation) is docs-only."
+  }
+]

@@ -1,0 +1,359 @@
+[
+  {
+    "id": 81,
+    "name": "Stripe",
+    "category": "Finance and Fintech",
+    "one_line": "Global payment processing and financial infrastructure platform for online businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free signup at stripe.com; API keys are issued self-serve in the dashboard (test keys instantly, live keys after simple account activation). No sales approval required for standard API access. Connect OAuth (for multi-tenant platforms) also self-serve via the dashboard."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Extensive public API reference (docs.stripe.com/api) covering payments, billing, Connect, Treasury, reports, and more. Official hosted MCP server at https://mcp.stripe.com (OAuth or restricted API key); open-source agent toolkit on GitHub (stripe/agent-toolkit)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.stripe.com/connect/oauth-reference",
+      "access_url": "https://stripe.com",
+      "api_url": "https://docs.stripe.com/api",
+      "mcp_url": "https://docs.stripe.com/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: OAuth 2.0 for Connect (connect.stripe.com/oauth/authorize and /oauth/token), secret/restricted API keys for standard auth, and official MCP server with documented tools. Fully self-serve; buildable today."
+  },
+  {
+    "id": 82,
+    "name": "Plaid",
+    "category": "Finance and Fintech",
+    "one_line": "Fintech data network that connects applications to users' bank and financial accounts.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Sandbox/test credentials are free and self-serve after dashboard signup (dashboard.plaid.com issues live client_id/secret). Production data access is gated: official docs state Production requires a paid plan or trial and that Plaid enables it after approval."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Comprehensive REST API (transactions, auth, identity, Link, webhooks). Official remote Dashboard MCP server at https://api.dashboard.plaid.com/mcp/ (OAuth token with mcp:dashboard scope) plus a local sandbox MCP in Plaid's AI coding toolkit. Note the main Plaid API authenticates via PLAID-CLIENT-ID / PLAID-SECRET headers, not bearer tokens."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Production access to real user bank data requires Plaid approval (paid plan or trial enablement), not fully self-serve. Sandbox integration is buildable today."
+    },
+    "evidence": {
+      "auth_url": "https://plaid.com/docs/api/oauth/",
+      "access_url": "https://dashboard.plaid.com",
+      "api_url": "https://plaid.com/docs/api/",
+      "mcp_url": "https://plaid.com/docs/resources/mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: client_id/secret header auth, OAuth endpoints (/oauth/token, /oauth/introspect, /oauth/revoke), OAuth in Link for bank connections, and official MCP documentation. Production gating confirmed by Plaid's own OAuth guide (requires Production access before OAuth banks are supported)."
+  },
+  {
+    "id": 83,
+    "name": "Binance",
+    "category": "Finance and Fintech",
+    "one_line": "Largest cryptocurrency exchange by volume, with spot, futures, and derivatives trading APIs.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free account creation; API keys are generated self-serve in account settings (public market-data endpoints work without keys; trading endpoints need a verified account). Binance Login (OAuth 2.0) is explicitly restricted to close ecosystem partners and requires business-team outreach."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket"
+      ],
+      "breadth": "broad",
+      "mcp": "community",
+      "note": "Extensive official developer docs (developers.binance.com) covering spot, USD-M/COIN-M futures, options, and market data over REST + WebSocket, with HMAC-SHA256 signed requests using API key + secret. OAuth 2.0 (Binance Login) available but partner-gated. No official MCP server; multiple community MCP servers exist (e.g., snjyor/binance-mcp, nirholas/Binance-MCP)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.binance.com/docs/binance-open-api/apis",
+      "access_url": "https://www.binance.com",
+      "api_url": "https://developers.binance.com/docs",
+      "mcp_url": "https://github.com/snjyor/binance-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: API-key + HMAC signature authentication for trading/account endpoints, WebSocket API with session.login, and OAuth 2.0 (PKCE + authorization code) for Binance Login which the docs state is 'exclusively offered to close ecosystem partners.' API-key route is self-serve and buildable; MCP is community-maintained only."
+  },
+  {
+    "id": 84,
+    "name": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "one_line": "Payment gateway service for card and bank-rail payment processing, powered by NMI (Network Merchants Inc.) infrastructure.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "No distinct first-party self-serve developer portal for 'Paygent Connect' was found. NMI, the underlying gateway, issues merchant API security keys only to merchant/partner accounts set up through NMI or its reseller channel (docs recommend partners create test merchant accounts); no anonymous self-serve key."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS POST"
+      ],
+      "breadth": "moderate",
+      "mcp": "none_found",
+      "note": "The underlying NMI gateway API is publicly documented at docs.nmi.com (REST /api/v5/payments/* with API-key auth plus the legacy /api/transact.php, Query API, webhooks, sandbox). Coverage is moderate: sale/auth/capture/void/refund, customer vault, tokenized payments. No MCP server found for the NMI gateway or a Paygent-branded service."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Credentialing is gated: needs an NMI merchant or partner account (sales/underwriting), and the exact 'Paygent Connect' brand identity could not be verified first-party, so its specific contract/credential path is unclear."
+    },
+    "evidence": {
+      "auth_url": "https://docs.nmi.com/reference/transactions-processing",
+      "access_url": "https://www.nmi.com",
+      "api_url": "https://docs.nmi.com",
+      "mcp_url": null
+    },
+    "confidence": "low",
+    "research_notes": "Assignment hint labels this 'paygent (NMI-powered)'. No first-party 'Paygent Connect' developer site could be located; the Japanese PSP 'Paygent' (paygent.co.jp) is a separate entity and not NMI-powered, so it was excluded. Treated as an NMI-powered gateway: NMI API is well documented with API-key auth and a sandbox, but access is merchant/partner gated. Marked low confidence because the brand-level identity and credential path are unverified."
+  },
+  {
+    "id": 85,
+    "name": "iPayX",
+    "category": "Finance and Fintech",
+    "one_line": "MCP-native foreign-exchange forensic audit engine that scores bank FX transactions against live mid-market rates (FINTRAC-registered MSB).",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free account signup at ipayx.ai with dashboard-issued API keys (ipx_live_...); 5 free lifetime audits, then paid tiers (Developer $99/mo up to Enterprise). Self-serve signup with no sales gate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "narrow",
+      "mcp": "official",
+      "note": "First-party developer docs (ipayx.ai/developers): POST /v1/audit plus score-config endpoints and webhooks, Bearer-token auth, stable v1 API. Official hosted MCP server at https://mcp.ipayx.ai/mcp (listed on the MCP Registry; source repo iPAYX-Technologies/mcp-fx-audit) exposing check_fx_rate, audit_transaction, full_forensic_report, compare_fx_sources. Breadth is narrow - a single-purpose FX audit API."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.ipayx.ai/developers",
+      "access_url": "https://www.ipayx.ai/pricing",
+      "api_url": "https://www.ipayx.ai/docs/api",
+      "mcp_url": "https://mcp.ipayx.ai/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from first-party site/docs fetched directly: REST API with Bearer API-key auth, webhook events, error/rate-limit table, official MCP server URL and config, and pricing page showing free tier. Small, focused surface but fully self-serve and MCP-native - an easy win."
+  },
+  {
+    "id": 86,
+    "name": "QuickBooks",
+    "category": "Finance and Fintech",
+    "one_line": "Small-business accounting software (Intuit QuickBooks Online) with a broad API for invoices, payments, reports, and contacts.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free Intuit Developer account; apps registered self-serve on developer.intuit.com with free sandbox companies. OAuth 2.0 apps connect to live companies self-serve (production just needs a registered app + public HTTPS redirect). App-Store listing is a separate review, but raw API access is not sales-gated."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Very broad documented API: QBO Accounting (REST) plus new GraphQL API, Payments API, OAuth 2.0/OpenID Connect with discovery documents. Official MCP exists in two forms: Intuit's open-source QuickBooks Online MCP Server (github.com/intuit/quickbooks-online-mcp-server) and Intuit's hosted MCP pilot (mcp.quickbooks.intuit.com/mcp, currently invitation-only for pilot partners)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+      "access_url": "https://developer.intuit.com",
+      "api_url": "https://developer.intuit.com/app/developer/qbo/docs/api",
+      "mcp_url": "https://github.com/intuit/quickbooks-online-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official Intuit docs: OAuth 2.0 authorization-code flow with 60-minute access tokens and 5-year refresh tokens, discovery document endpoints, REST + GraphQL APIs. Sandbox is free/self-serve. Hosted MCP is pilot-gated but the open-source MCP server and REST API make integration buildable today."
+  },
+  {
+    "id": 87,
+    "name": "Xero",
+    "category": "Finance and Fintech",
+    "one_line": "Cloud accounting platform for SMBs with invoicing, contacts, bank feeds, and financial-reporting APIs.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free developer account and free sandbox at developer.xero.com (self-serve signup). Accessing live business data requires a Xero subscription (free 30-day trial available) and connecting a Xero organization; 'custom connections' (client-credentials grant) streamline single-org integrations."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "OData"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Broad, well-documented API: Accounting API (invoices, contacts, reports), plus Payroll, Files, Assets, App Store APIs; OAuth 2.0 with PKCE for native apps and client-credentials grant for custom connections. Official open-source MCP server (github.com/xeroapi/xero-mcp-server) announced on Xero's dev blog."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.xero.com/documentation/guides/oauth2/overview/",
+      "access_url": "https://developer.xero.com",
+      "api_url": "https://developer.xero.com/documentation/api/accounting/overview",
+      "mcp_url": "https://github.com/xeroapi/xero-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official developer site and Xero dev blog: free developer account + sandbox, OAuth 2.0 auth-code flow with PKCE, client-credentials for custom connections, and an official open-source MCP server. Buildable today; only live-org access needs a Xero subscription/trial."
+  },
+  {
+    "id": 88,
+    "name": "Brex",
+    "category": "Finance and Fintech",
+    "one_line": "Unified spend platform - global corporate cards, expense management, reimbursements, travel, and bill pay for finance teams.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "API tokens (bxt_...) are created in the Brex dashboard (Settings > Developer) and require an active Brex customer account with admin access plus accepting the developer API agreement. OAuth2 (client credentials / auth-code) is available for partners. Not accessible to non-customers."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Well-documented OpenAPI/REST APIs: Team, Transactions, Expenses, Cards, Payments, Travel, Budgets (base https://api.brex.com). Official hosted MCP server at https://api.brex.com/mcp with OAuth DCR or API-key auth (documented at developer.brex.com/docs/mcp)."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Requires an active Brex customer account with admin access to generate tokens; no self-serve path for non-customers."
+    },
+    "evidence": {
+      "auth_url": "https://developer.brex.com/guides/authentication",
+      "access_url": "https://dashboard.brex.com",
+      "api_url": "https://developer.brex.com",
+      "mcp_url": "https://developer.brex.com/docs/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official Brex docs: user tokens created by admins in dashboard, Bearer header auth, 90-day inactivity expiry, production-only API server, and official MCP server with OAuth or API-key auth. Buildable if you are a Brex customer; otherwise admin-gated."
+  },
+  {
+    "id": 89,
+    "name": "Ramp",
+    "category": "Finance and Fintech",
+    "one_line": "Corporate spend management platform - cards, expenses, reimbursements, and bill pay - with a Developer API.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "Developer API access requires being a Ramp customer; only users with Developer API authorization permissions (typically Admin / Business Owner) can create apps or authorize third-party integrations. No anonymous self-serve credentials."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Broad documented REST API (docs.ramp.com/developer-api) covering transactions, cards, reimbursements, vendors, departments, plus webhooks, Custom Records, and AI Usage Tracking; OpenAPI spec at /openapi/developer-api.json. OAuth 2.0 (authorization-code + client credentials) with HTTP Basic auth at the token endpoint. Official open-source MCP server from Ramp's own engineering org (github.com/ramp-public/ramp-mcp)."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Requires a Ramp business account and admin-approved Developer API authorization; no self-serve path for non-customers."
+    },
+    "evidence": {
+      "auth_url": "https://docs.ramp.com/developer-api/v1/authorization",
+      "access_url": "https://docs.ramp.com/developer-api/v1/getting-started",
+      "api_url": "https://docs.ramp.com/developer-api/",
+      "mcp_url": "https://github.com/ramp-public/ramp-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official Ramp docs: OAuth 2.0 framework (authorization-code for third-party apps, client credentials), token endpoint using HTTP Basic auth with client_id/client_secret, admin-only authorization permissions, and an official MCP server published under Ramp's GitHub org plus a Ramp engineering blog post. Gated to customers with admin approval."
+  },
+  {
+    "id": 90,
+    "name": "PitchBook",
+    "category": "Finance and Fintech",
+    "one_line": "Private and public capital markets data platform - deals, funds, investors, companies, and people intelligence.",
+    "auth_methods": [
+      "API key",
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "The API is a standalone offering that 'requires a standalone contract agreement.' Access is requested via PitchBook's Direct Data team or an account manager; the help page says they 'establish the API connection through an API key or authentication token' after a commercial conversation. No self-serve signup."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Documented RESTful API (base https://api.pitchbook.com) with relational endpoints for deals, investors, funds, people, limited partners, and service providers plus AI-powered VC exit predictor data; endpoint docs published via Postman. Official MCP: PitchBook runs an MCP gateway (mcp-proxy-external.pitchbook.com) and premium MCP server (premium.mcp.pitchbook.com/mcp) using OAuth, and announced MCP integrations with Perplexity, Anthropic, and OpenAI for subscribers."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "API access requires a standalone contract and Direct Data team / account-manager approval; no self-serve or trial credential path."
+    },
+    "evidence": {
+      "auth_url": "https://pitchbook.com/help/PitchBook-api",
+      "access_url": "https://pitchbook.com/products/direct-access-data/api",
+      "api_url": "https://pitchbook.com/help/PitchBook-api",
+      "mcp_url": "https://mcp-proxy-external.pitchbook.com/"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from PitchBook's own help/product pages and press: REST API with API key/authentication token issued after a Direct Data contract, sandbox available to contracted clients, and official MCP gateway + premium MCP server + AI-partner MCP integrations (Perplexity 'Essential' MCP, OpenAI connector). Clear sales-gate; buildable only with a contract."
+  }
+]

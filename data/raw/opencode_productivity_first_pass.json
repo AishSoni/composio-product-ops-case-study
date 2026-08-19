@@ -1,0 +1,353 @@
+[
+  {
+    "id": 71,
+    "name": "Notion",
+    "category": "Productivity and Project Management",
+    "one_line": "Notion is an all-in-one workspace for docs, wikis, and databases with a REST API and hosted MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available; API usable immediately. Internal connections and personal access tokens (PATs) are free; OAuth public connections can be built without a Marketplace listing (listing requires a Notion security review)."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Hosted MCP server at https://mcp.notion.com/mcp with Streamable HTTP and SSE; OAuth authorization required (no non-interactive token auth on hosted server)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.notion.com/reference/authentication",
+      "access_url": "https://developers.notion.com/guides/get-started/overview",
+      "api_url": "https://developers.notion.com/reference/intro",
+      "mcp_url": "https://developers.notion.com/guides/mcp/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Official docs confirm three auth models: internal connections (static API token), public connections (OAuth 2.0), and PATs. Free self-serve confirmed via API docs (quick start with a PAT in under two minutes). MCP is first-party and actively maintained."
+  },
+  {
+    "id": 72,
+    "name": "Airtable",
+    "category": "Productivity and Project Management",
+    "one_line": "Airtable is a spreadsheet-database hybrid for structured records with a REST API and official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available; personal access tokens (PATs) can be generated self-serve from the Airtable account page without approval."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official hosted MCP server at https://mcp.airtable.com/mcp (HTTP transport) maintained by Airtable; supports OAuth and PAT authentication paths."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://airtable.com/developers/web/api/authentication",
+      "access_url": "https://www.airtable.com/pricing",
+      "api_url": "https://airtable.com/developers/web/api/introduction",
+      "mcp_url": "https://airtable.com/developers/web/guides/mcp-server-overview"
+    },
+    "confidence": "high",
+    "research_notes": "First-party docs (Airtable support and developer pages) and the Airtable/airtable-mcp-cli GitHub repo confirm an official MCP server plus skills library. Auth via OAuth2 or PAT (bearer token) confirmed."
+  },
+  {
+    "id": 73,
+    "name": "Linear",
+    "category": "Productivity and Project Management",
+    "one_line": "Linear is a fast issue and project tracking tool for product teams with a GraphQL API and hosted MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available. Personal API keys created self-serve under Settings > Security; OAuth2 apps registered self-serve in workspace settings."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "First-party hosted MCP at https://mcp.linear.app/mcp (Streamable HTTP, OAuth 2.1 with DCR, or bearer API key); read-only endpoint at /mcp/readonly."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://linear.app/developers/oauth-2-0-authentication",
+      "access_url": "https://linear.app/pricing",
+      "api_url": "https://linear.app/developers",
+      "mcp_url": "https://linear.app/docs/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm OAuth 2.0 (authorization code, PKCE, client credentials, app actor tokens) and personal API keys. MCP docs are first-party (linear.app/docs/mcp) with per-workspace OAuth sessions."
+  },
+  {
+    "id": 74,
+    "name": "Jira",
+    "category": "Productivity and Project Management",
+    "one_line": "Jira is Atlassian's issue and project tracking suite (Jira Software Cloud) with a REST API and official Rovo MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available (up to 10 users) self-serve. API tokens created in account settings; OAuth apps via developer console. MCP API-token auth requires admin enablement; OAuth 2.1 works for interactive use."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Atlassian Rovo MCP server at https://mcp.atlassian.com/v1/mcp covering Jira, Confluence, JSM, Bitbucket, Compass; OAuth 2.1 or admin-enabled API token."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/",
+      "access_url": "https://www.atlassian.com/software/jira/free",
+      "api_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "mcp_url": "https://developer.atlassian.com/cloud/rovo-mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Official Jira REST API docs confirm OAuth 2.0, OAuth 1.0a (legacy), and Basic HTTP auth (API tokens). Rovo MCP docs (developer.atlassian.com/cloud/rovo-mcp) confirm official hosted MCP; some tool sets (JSM, Bitbucket) require API-token auth enabled by admin."
+  },
+  {
+    "id": 75,
+    "name": "Asana",
+    "category": "Productivity and Project Management",
+    "one_line": "Asana is a work management platform for task, project, and goal tracking with a REST API and official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available. PATs and OAuth apps created self-serve from the Asana developer console (app.asana.com/0/my-apps); service accounts supported."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Asana MCP V2 server at https://mcp.asana.com/v2/mcp (Streamable HTTP, OAuth); requires pre-registered OAuth app; MCP tokens are MCP-scoped only."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.asana.com/docs/oauth",
+      "access_url": "https://asana.com/pricing",
+      "api_url": "https://developers.asana.com/docs",
+      "mcp_url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm OAuth 2.0 (auth code, refresh tokens, PKCE), PATs, and service accounts. MCP docs confirm official V2 server (GA) and deprecation of the V1 SSE beta (shutdown Aug 2026). Enterprise+ admins can block/allow MCP clients."
+  },
+  {
+    "id": 76,
+    "name": "Monday.com",
+    "category": "Productivity and Project Management",
+    "one_line": "monday.com is a low-code work operating system with a GraphQL API and hosted Platform MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available (up to 2 seats). Personal API tokens generated self-serve; OAuth apps registered in the developer center. DCR registration is required only to distribute integrations publicly."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official hosted Platform MCP at https://mcp.monday.com/mcp maintained by monday.com's AI team; auth via API token, OAuth 2.0 app, or dynamic client registration (DCR)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.monday.com/apps/docs/oauth",
+      "access_url": "https://monday.com/pricing",
+      "api_url": "https://developer.monday.com/api-reference/docs",
+      "mcp_url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm OAuth 2.0 (authorization code, plus new OAuth 2.1 flow) and personal API tokens. MCP docs first-party with 60+ tools and multiple auth paths; legacy OAuth tokens do not expire."
+  },
+  {
+    "id": 77,
+    "name": "ClickUp",
+    "category": "Productivity and Project Management",
+    "one_line": "ClickUp is an all-in-one productivity platform for tasks, docs, and goals with a REST API and official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available; API available on all plans. Personal tokens (pk_*) self-serve; OAuth apps can only be created by workspace owners/admins."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official MCP server at https://mcp.clickup.com/mcp (public beta, all plans); OAuth 2.1 with PKCE only - personal API keys/access tokens are NOT supported for MCP."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.clickup.com/docs/authentication",
+      "access_url": "https://clickup.com/pricing",
+      "api_url": "https://developer.clickup.com/docs/getting-started",
+      "mcp_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Official API docs confirm OAuth 2.0 authorization code flow plus personal tokens; API v2/v3 OpenAPI specs published. MCP docs (developer.clickup.com and help.clickup.com) confirm official first-party server in public beta, OAuth-only, no delete operations."
+  },
+  {
+    "id": 78,
+    "name": "Coda",
+    "category": "Productivity and Project Management",
+    "one_line": "Coda (now Superhuman Docs) is a collaborative document-platform hybrid with a REST API and official remote MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available. API tokens generated self-serve from the Coda account page (API settings); OAuth apps available for third-party integrations."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official remote MCP server at https://coda.io/apis/mcp; OAuth 2 for ChatGPT/Claude/Cursor and bearer PATs (MCP-restricted tokens) for other clients."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://coda.io/developers/apis/v1",
+      "access_url": "https://coda.io/pricing",
+      "api_url": "https://coda.io/developers",
+      "mcp_url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP"
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm the Docs API (Bearer API tokens) and the Superhuman Docs API base path https://coda.io/apis/v1. Official help center confirms first-party MCP with OAuth and PAT auth paths; note the product is being rebranded to Superhuman Docs."
+  },
+  {
+    "id": 79,
+    "name": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "one_line": "Smartsheet is an enterprise work execution and spreadsheet-style collaboration platform with a REST API and official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available. Access tokens (API keys) generated in the Smartsheet UI; OAuth app registration via Developer Tools is self-serve."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Smartsheet MCP server at https://mcp.smartsheet.com (US; .eu and .au for other regions); bearer API token or OAuth for select AI clients."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+      "access_url": "https://www.smartsheet.com/pricing",
+      "api_url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+      "mcp_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Official developer docs confirm OAuth 2.0 (authorization code + refresh tokens) and bearer access tokens generated in-app. First-party MCP docs (developers.smartsheet.com/ai-mcp) confirm official server with regional endpoints and bearer token auth."
+  },
+  {
+    "id": 80,
+    "name": "Harvest",
+    "category": "Productivity and Project Management",
+    "one_line": "Harvest is a time tracking and invoicing app with a REST API (V2) and official MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "No free plan - 14-day free trial, then paid; self-serve signup. Personal Access Tokens created from the Developers section of Harvest ID; OAuth2 apps also self-serve."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Harvest MCP at https://api.harvestapp.com/mcp (first-party, hosted); OAuth sign-in flow; connects timers, time entries, and project budgets."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "access_url": "https://www.getharvest.com/pricing",
+      "api_url": "https://help.getharvest.com/api-v2/",
+      "mcp_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+    },
+    "confidence": "high",
+    "research_notes": "Official API V2 docs confirm OAuth2 (authorization code + implicit) and Personal Access Tokens; requests require a User-Agent header. Official help center article confirms first-party Harvest MCP server at https://api.harvestapp.com/mcp. Buildable today, but requires a paid/trial account."
+  }
+]

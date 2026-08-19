@@ -1,0 +1,884 @@
+[
+  {
+    "id": 9,
+    "name": "Copper",
+    "category": "CRM and Sales",
+    "one_line": "Google Workspace-native CRM with API-key or OAuth2 REST API and a 14-day trial; only community MCP servers found.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "14-day free trial, no credit card, no permanent free plan; paid tiers from ~$9-23/seat/mo (annual); start at copper.com/pricing."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "community",
+      "note": "REST API v1 (developer.copper.com) with webhooks and person/company/opportunity/lead objects; no official MCP found, community dazanza/copper-mcp exists."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.copper.com/introduction/authentication.html",
+      "access_url": "https://www.copper.com/pricing",
+      "api_url": "https://developer.copper.com/",
+      "mcp_url": "https://github.com/dazanza/copper-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Auth (API Keys + OAuth2.0) verified from developer.copper.com/introduction/authentication.html; pricing/trial verified from copper.com/pricing plus secondary sources (no free plan, 14-day no-credit-card trial); MCP is community-only (no official found in searches)."
+  },
+  {
+    "id": 20,
+    "name": "Gladly",
+    "category": "Support and Helpdesk",
+    "one_line": "Enterprise 'ticketless' CX platform built around people/conversations with a REST API; access is primarily sales-led.",
+    "auth_methods": [
+      "token",
+      "Basic"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "Core Gladly platform is demo/sales-led with no self-serve signup (pricing page is a 'Get a demo' gate; contracts via Order Form). A self-serve path exists only via the Gladly Shopify app (30-day free trial, usage-based). API requires an admin to grant the 'API User' permission per agent."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS",
+        "JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "unclear",
+      "note": "REST API at {organization}.gladly.com/api/v1 using token-based Basic authentication (agent email + API token); no OAuth on the API. Documented resources cover conversations, customers, people, tasks, webhooks, and a Lookup Adaptor. No official first-party MCP server found; only third-party connectors (e.g., Truto gateway) expose Gladly via MCP."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.gladly.com/rest/",
+      "access_url": "https://www.gladly.com/pricing",
+      "api_url": "https://developer.gladly.com/rest/",
+      "mcp_url": null
+    },
+    "confidence": "medium",
+    "research_notes": "Gladly developer docs confirm token-based Basic auth with API User permission and API token creation flow. Access to the core platform is sales/demo-gated (gladly.com/pricing shows only 'Get a demo'), so self-serve onboarding is not available; Shopify app offers a limited self-serve trial. No official MCP server located in first-party sources as of research date; third-party gateway (Truto) provides an MCP path. Confidence medium due to sales-led access and negative-space MCP finding."
+  },
+  {
+    "id": 21,
+    "name": "Slack",
+    "category": "Communications and Messaging",
+    "one_line": "Enterprise team messaging and collaboration platform with a comprehensive developer platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Anyone can create a Slack app at api.slack.com/apps; free workspace tier exists. Installing apps to a workspace can require workspace admin approval depending on org settings."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official hosted MCP server at mcp.slack.com (launched Feb 17, 2026 per docs.slack.dev changelog) plus slackapi/slack-mcp-server; apps must explicitly enable the MCP toggle."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.slack.dev/authentication/installing-with-oauth",
+      "access_url": "https://api.slack.com/apps",
+      "api_url": "https://docs.slack.dev/reference/",
+      "mcp_url": "https://docs.slack.dev/ai/mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Verified against docs.slack.dev OAuth/installing-with-oauth and api.slack.com scope pages. Web API (REST, api.slack.com) plus Events API (WebSocket); bot and user tokens. Official MCP launch confirmed in docs.slack.dev changelog 2026/02/17."
+  },
+  {
+    "id": 32,
+    "name": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "one_line": "Meta's advertising API (Marketing API / Graph API) for managing Facebook and Instagram ad campaigns, audiences, and insights.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "API is free; create a Business-type app and add the Marketing API product. Standard access works for ad accounts you own/administer; Advanced tier (third-party management, higher throughput) requires App Review."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST (Graph API)"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Meta Ads AI Connectors MCP server + CLI launched Apr 29 2026 in open beta at mcp.facebook.com/ads (Business OAuth, 29 tools, read/write)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null,
+      "note": "Self-serve, free, and immediate for your own ad accounts; Advanced access for third-party advertisers needs Meta App Review."
+    },
+    "evidence": {
+      "auth_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started",
+      "access_url": "https://developers.facebook.com/apps",
+      "api_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+      "mcp_url": "https://mcp.facebook.com/ads"
+    },
+    "confidence": "high",
+    "research_notes": "Marketing API requires active ad account, Meta developer account, and app; auth via OAuth tokens or system-user tokens. Since a 2026 update apps start with limited dev-level access and apply for higher tiers."
+  },
+  {
+    "id": 33,
+    "name": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "one_line": "LinkedIn's Marketing API (Advertising API) for managing sponsored content, campaign groups, campaigns, creatives, and ads reporting.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "Advertising API requires approval via the Developer Portal (Marketing Developer Platform). Two tiers: Development (limited) and Standard (full), upgrade at LinkedIn's discretion."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "none_found",
+      "note": "No first-party LinkedIn MCP server; no community MCP found servers wrap the Marketing API (e.g., linkedin-ads-mcp on PyPI/npm)."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Advertising API access requires LinkedIn application approval (Marketing Developer Platform); LinkedIn reviews at its discretion and approval is not guaranteed."
+    },
+    "evidence": {
+      "auth_url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+      "access_url": "https://www.linkedin.com/developers/apps",
+      "api_url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "Microsoft Learn-hosted LinkedIn docs confirm most Marketing/Advertising permissions require explicit LinkedIn approval; self-serve API terms allow ~100k daily calls but access to ads APIs is gated by the partner program."
+  },
+  {
+    "id": 34,
+    "name": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "one_line": "All-in-one CRM and marketing automation platform (HighLevel/LeadConnector) with a versioned REST API covering contacts, conversations, calendars, opportunities, and payments.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Paid SaaS; API access via Private Integration Tokens (created in sub-account Settings > Private Integrations) or OAuth 2.0 for Marketplace apps. No approval gate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official HighLevel MCP server documented by HighLevel at services.leadconnectorhq.com/mcp/ (Private Integration Token or OAuth auth)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null,
+      "note": "Immediate self-serve: create Private Integration token, hit V2 REST API (V1 retired end of 2025)."
+    },
+    "evidence": {
+      "auth_url": "https://marketplace.gohighlevel.com/docs/",
+      "access_url": "https://help.gohighlevel.com/support/solutions/articles/155000003054-private-integrations-everything-you-need-to-know",
+      "api_url": "https://marketplace.gohighlevel.com/docs/",
+      "mcp_url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Official docs confirm OAuth 2.0 and Private Integration Token auth, rate limits (100 req/10s, 200k/day per resource), and webhooks. V1 API keys deprecated; docs versioned at marketplace.gohighlevel.com/docs."
+  },
+  {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "one_line": "Enterprise B2C commerce platform (SFCC) exposing Open Commerce API (OCAPI) and newer Salesforce Commerce APIs for headless retail.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "Requires a licensed SFCC instance; API clients are provisioned via Account Manager by an org administrator. No public self-serve developer tier."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official B2C DX MCP Server under Salesforce's commercecloud GitHub org (SCAPI, cartridges, MRT, Storefront Next tooling); community OCAPI-based servers also exist."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Requires a licensed Salesforce B2C Commerce instance plus Account Manager API-client provisioning and OCAPI/SCAPI configuration in Business Manager."
+    },
+    "evidence": {
+      "auth_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/get-started-with-ocapi.html",
+      "access_url": "https://help.salesforce.com/s/articleView?id=cc.b2c_ocapi_client_authentication_and_authorization.htm&language=en_US&type=5",
+      "api_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi",
+      "mcp_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "OCAPI uses OAuth 2.0 client-credentials with a client ID/password from Account Manager; SLAS offers JWT-based auth. Official developer docs confirm flows and Salesforce's MCP server."
+  },
+  {
+    "id": 51,
+    "name": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Pay-as-you-go SEO & SERP data API (SERP, keywords, on-page, backlinks, business data) with official client libraries and a hosted MCP server.",
+    "auth_methods": [
+      "Basic",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free account signup with free unlimited trial credits (pay-as-you-go after); API credentials (login/password) are auto-generated in the dashboard's API Access tab."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v3 across SERP, keyword data, on-page, backlinks, and appendix endpoints; official PHP/Python/C#/Java/TypeScript clients; OpenAPI spec; hosted MCP at mcp.dataforseo.com/v3/mcp plus OSS server repo."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.dataforseo.com/v3/auth/",
+      "access_url": "https://app.dataforseo.com/api-access",
+      "api_url": "https://docs.dataforseo.com/v3/",
+      "mcp_url": "https://dataforseo.com/model-context-protocol"
+    },
+    "confidence": "high",
+    "research_notes": "REST API itself uses HTTP Basic auth only (no OAuth for direct API calls); OAuth2 only surfaces via the hosted MCP connection flow. Free unlimited trial documented in official getting-started docs. OpenAPI spec and official MCP GitHub (dataforseo/mcp-server-typescript) confirmed."
+  },
+  {
+    "id": 57,
+    "name": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "one_line": "Web data platform (proxies, Web Unlocker, Scraping Browser, SERP API, datasets) with REST API (Bearer key), native proxy auth, and an official MCP server with free tier.",
+    "auth_methods": [
+      "API key",
+      "Basic"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free sign-up with 5,000 free requests/month; API key auto-created on account creation and managed in account settings; native proxy username/password access also available."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API for Web Unlocker, SERP API, Scraping Browser, datasets/scrapers; OpenAPI with bearerAuth; official MCP server (github brightdata/brightdata-mcp) remote or self-hosted, documented at docs.brightdata.com."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.brightdata.com/api-reference/authentication",
+      "access_url": "https://brightdata.com/cp/setting/users",
+      "api_url": "https://docs.brightdata.com/api-reference/introduction",
+      "mcp_url": "https://docs.brightdata.com/ai/mcp-server/overview"
+    },
+    "confidence": "high",
+    "research_notes": "Two auth modes confirmed: API key as Bearer token for REST, or native proxy username/password (brd-customer-<id>-zone-<name>:<password>) for proxy protocol; MCP server authenticates with API token only (mcp.brightdata.com/mcp?token=...)."
+  },
+  {
+    "id": 59,
+    "name": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "one_line": "B2B contact/company data API (prospecting, contact/company enrichment, email verification) with REST and a downloadable OpenAPI 3.1 spec.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "paid_self_serve",
+      "note": "Self-serve signup and pricing exist, but official docs state the API key is 'provided in your contract', implying keys are provisioned through an account/vendor relationship."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "none_found",
+      "note": "REST API (mostly async job-based: prospector, contact/company/phone enrichment, search, job change, email verification, account reporter) with x-api-key auth, webhooks, and OpenAPI 3.1 spec; no official MCP found in docs."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.waterfall.io/v1/authentication",
+      "access_url": "https://waterfall.io/",
+      "api_url": "https://docs.waterfall.io/v1/introduction",
+      "mcp_url": null
+    },
+    "confidence": "medium",
+    "research_notes": "Docs confirm x-api-key header auth and OpenAPI spec download; no official MCP server found. Access status is the main uncertainty (docs say keys come via contract), so confidence is medium."
+  },
+  {
+    "id": 63,
+    "name": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "one_line": "Composable web platform for static sites, serverless functions, and edge compute with a REST API for deploys, sites, forms, and teams.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan self-serve; PATs can be generated in User settings > Applications, and OAuth apps can be registered for third-party integrations."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST/HTTPS"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API (api.netlify.com/api/v1) documented at open-api.netlify.com. Official @netlify/mcp server lets agents use the Netlify API and CLI; auth via CLI OAuth flow or PAT."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.netlify.com/api/get-started/",
+      "access_url": "https://www.netlify.com/pricing/",
+      "api_url": "https://open-api.netlify.com/",
+      "mcp_url": "https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server/"
+    },
+    "confidence": "high",
+    "research_notes": "Netlify docs confirm OAuth2 is the authentication model, with PATs used as Bearer tokens; password resets invalidate tokens. Official MCP server repo (netlify/netlify-mcp) and npm @netlify/mcp documented. PATs are full-scope (no granular scopes) per docs."
+  },
+  {
+    "id": 67,
+    "name": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "one_line": "Cloud data warehouse / AI Data Cloud with SQL-based compute, REST APIs, and Cortex AI; enterprise-focused, self-serve trial signup.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "No permanent free tier; 30-day trial via signup.snowflake.com with no payment info required. Trial converts to paid; some features (external network access, Cortex limits) restricted on trial. Enterprise features often sales-led."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST/HTTPS (SQL Statements API, v2)",
+        "JDBC/ODBC/drivers"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "REST API v2 (api/v2/statements, /users, /databases) documented; auth via key-pair JWT (RS256), Snowflake OAuth, or programmatic access tokens. Official managed MCP server (public preview) documented under Snowflake Cortex MCP."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+      "access_url": "https://signup.snowflake.com/",
+      "api_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+      "mcp_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Official docs confirm REST API auth options: key-pair JWT, OAuth, programmatic access tokens, with X-Snowflake-Authorization-Token-Type header. Trial is 30 days/$400 credits, email only, per docs.snowflake.com/en/user-guide/admin-trial-account. Managed MCP server in public preview per docs and Snowflake blog."
+  },
+  {
+    "id": 69,
+    "name": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "one_line": "Cloud-scale observability/monitoring platform (metrics, logs, traces) with a large HTTP REST API and an official remote MCP server.",
+    "auth_methods": [
+      "API key",
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "No permanent free tier for monitoring; 14-day free trial, no credit card required (datadoghq.com/free-datadog-trial). API/application keys created in Organization Settings; MCP server formerly preview/request-gated."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST/HTTPS"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Comprehensive REST API (docs.datadoghq.com/api) with per-site base URLs; auth via DD-API-KEY + DD-APPLICATION-KEY, PATs, and upcoming OAuth clients. Official Datadog MCP Server documented at docs.datadoghq.com/mcp_server/ (remote, OAuth, fair-use limits)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.datadoghq.com/api/latest/authentication/",
+      "access_url": "https://www.datadoghq.com/free-datadog-trial/",
+      "api_url": "https://docs.datadoghq.com/api/latest/",
+      "mcp_url": "https://docs.datadoghq.com/mcp_server/"
+    },
+    "confidence": "high",
+    "research_notes": "Docs confirm dual-key model (API + application key) with headers DD-API-KEY/DD-APPLICATION-KEY; 2026 blog describes new PAT/SAT/OAuth models. MCP server official and documented (50 req/10s burst, 50k monthly tool calls). Access is trial-based, no permanent free tier."
+  },
+  {
+    "id": 74,
+    "name": "Jira",
+    "category": "Productivity and Project Management",
+    "one_line": "Jira is Atlassian's issue and project tracking suite (Jira Software Cloud) with a REST API and official Rovo MCP server.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free plan available (up to 10 users) self-serve. API tokens created in account settings; OAuth apps via developer console. MCP API-token auth requires admin enablement; OAuth 2.1 works for interactive use."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Official Atlassian Rovo MCP server at https://mcp.atlassian.com/v1/mcp covering Jira, Confluence, JSM, Bitbucket, Compass; OAuth 2.1 or admin-enabled API token."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/",
+      "access_url": "https://www.atlassian.com/software/jira/free",
+      "api_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "mcp_url": "https://developer.atlassian.com/cloud/rovo-mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Official Jira REST API docs confirm OAuth 2.0, OAuth 1.0a (legacy), and Basic HTTP auth (API tokens). Rovo MCP docs (developer.atlassian.com/cloud/rovo-mcp) confirm official hosted MCP; some tool sets (JSM, Bitbucket) require API-token auth enabled by admin."
+  },
+  {
+    "id": 81,
+    "name": "Stripe",
+    "category": "Finance and Fintech",
+    "one_line": "Global payment processing and financial infrastructure platform for online businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free signup at stripe.com; API keys are issued self-serve in the dashboard (test keys instantly, live keys after simple account activation). No sales approval required for standard API access. Connect OAuth (for multi-tenant platforms) also self-serve via the dashboard."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Extensive public API reference (docs.stripe.com/api) covering payments, billing, Connect, Treasury, reports, and more. Official hosted MCP server at https://mcp.stripe.com (OAuth or restricted API key); open-source agent toolkit on GitHub (stripe/agent-toolkit)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://docs.stripe.com/connect/oauth-reference",
+      "access_url": "https://stripe.com",
+      "api_url": "https://docs.stripe.com/api",
+      "mcp_url": "https://docs.stripe.com/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: OAuth 2.0 for Connect (connect.stripe.com/oauth/authorize and /oauth/token), secret/restricted API keys for standard auth, and official MCP server with documented tools. Fully self-serve; buildable today."
+  },
+  {
+    "id": 82,
+    "name": "Plaid",
+    "category": "Finance and Fintech",
+    "one_line": "Fintech data network that connects applications to users' bank and financial accounts.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Sandbox/test credentials are free and self-serve after dashboard signup (dashboard.plaid.com issues live client_id/secret). Production data access is gated: official docs state Production requires a paid plan or trial and that Plaid enables it after approval."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Comprehensive REST API (transactions, auth, identity, Link, webhooks). Official remote Dashboard MCP server at https://api.dashboard.plaid.com/mcp/ (OAuth token with mcp:dashboard scope) plus a local sandbox MCP in Plaid's AI coding toolkit. Note the main Plaid API authenticates via PLAID-CLIENT-ID / PLAID-SECRET headers, not bearer tokens."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Production access to real user bank data requires Plaid approval (paid plan or trial enablement), not fully self-serve. Sandbox integration is buildable today."
+    },
+    "evidence": {
+      "auth_url": "https://plaid.com/docs/api/oauth/",
+      "access_url": "https://dashboard.plaid.com",
+      "api_url": "https://plaid.com/docs/api/",
+      "mcp_url": "https://plaid.com/docs/resources/mcp/"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: client_id/secret header auth, OAuth endpoints (/oauth/token, /oauth/introspect, /oauth/revoke), OAuth in Link for bank connections, and official MCP documentation. Production gating confirmed by Plaid's own OAuth guide (requires Production access before OAuth banks are supported)."
+  },
+  {
+    "id": 83,
+    "name": "Binance",
+    "category": "Finance and Fintech",
+    "one_line": "Largest cryptocurrency exchange by volume, with spot, futures, and derivatives trading APIs.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free account creation; API keys are generated self-serve in account settings (public market-data endpoints work without keys; trading endpoints need a verified account). Binance Login (OAuth 2.0) is explicitly restricted to close ecosystem partners and requires business-team outreach."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "WebSocket"
+      ],
+      "breadth": "broad",
+      "mcp": "community",
+      "note": "Extensive official developer docs (developers.binance.com) covering spot, USD-M/COIN-M futures, options, and market data over REST + WebSocket, with HMAC-SHA256 signed requests using API key + secret. OAuth 2.0 (Binance Login) available but partner-gated. No official MCP server; multiple community MCP servers exist (e.g., snjyor/binance-mcp, nirholas/Binance-MCP)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developers.binance.com/docs/binance-open-api/apis",
+      "access_url": "https://www.binance.com",
+      "api_url": "https://developers.binance.com/docs",
+      "mcp_url": "https://github.com/snjyor/binance-mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official docs: API-key + HMAC signature authentication for trading/account endpoints, WebSocket API with session.login, and OAuth 2.0 (PKCE + authorization code) for Binance Login which the docs state is 'exclusively offered to close ecosystem partners.' API-key route is self-serve and buildable; MCP is community-maintained only."
+  },
+  {
+    "id": 85,
+    "name": "iPayX",
+    "category": "Finance and Fintech",
+    "one_line": "MCP-native foreign-exchange forensic audit engine that scores bank FX transactions against live mid-market rates (FINTRAC-registered MSB).",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free account signup at ipayx.ai with dashboard-issued API keys (ipx_live_...); 5 free lifetime audits, then paid tiers (Developer $99/mo up to Enterprise). Self-serve signup with no sales gate."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "narrow",
+      "mcp": "official",
+      "note": "First-party developer docs (ipayx.ai/developers): POST /v1/audit plus score-config endpoints and webhooks, Bearer-token auth, stable v1 API. Official hosted MCP server at https://mcp.ipayx.ai/mcp (listed on the MCP Registry; source repo iPAYX-Technologies/mcp-fx-audit) exposing check_fx_rate, audit_transaction, full_forensic_report, compare_fx_sources. Breadth is narrow - a single-purpose FX audit API."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://www.ipayx.ai/developers",
+      "access_url": "https://www.ipayx.ai/pricing",
+      "api_url": "https://www.ipayx.ai/docs/api",
+      "mcp_url": "https://mcp.ipayx.ai/mcp"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from first-party site/docs fetched directly: REST API with Bearer API-key auth, webhook events, error/rate-limit table, official MCP server URL and config, and pricing page showing free tier. Small, focused surface but fully self-serve and MCP-native - an easy win."
+  },
+  {
+    "id": 87,
+    "name": "Xero",
+    "category": "Finance and Fintech",
+    "one_line": "Cloud accounting platform for SMBs with invoicing, contacts, bank feeds, and financial-reporting APIs.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": {
+      "status": "trial_self_serve",
+      "note": "Free developer account and free sandbox at developer.xero.com (self-serve signup). Accessing live business data requires a Xero subscription (free 30-day trial available) and connecting a Xero organization; 'custom connections' (client-credentials grant) streamline single-org integrations."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "OData"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Broad, well-documented API: Accounting API (invoices, contacts, reports), plus Payroll, Files, Assets, App Store APIs; OAuth 2.0 with PKCE for native apps and client-credentials grant for custom connections. Official open-source MCP server (github.com/xeroapi/xero-mcp-server) announced on Xero's dev blog."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://developer.xero.com/documentation/guides/oauth2/overview/",
+      "access_url": "https://developer.xero.com",
+      "api_url": "https://developer.xero.com/documentation/api/accounting/overview",
+      "mcp_url": "https://github.com/xeroapi/xero-mcp-server"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from official developer site and Xero dev blog: free developer account + sandbox, OAuth 2.0 auth-code flow with PKCE, client-credentials for custom connections, and an official open-source MCP server. Buildable today; only live-org access needs a Xero subscription/trial."
+  },
+  {
+    "id": 90,
+    "name": "PitchBook",
+    "category": "Finance and Fintech",
+    "one_line": "Private and public capital markets data platform - deals, funds, investors, companies, and people intelligence.",
+    "auth_methods": [
+      "API key",
+      "token",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "partner_or_sales_gated",
+      "note": "The API is a standalone offering that 'requires a standalone contract agreement.' Access is requested via PitchBook's Direct Data team or an account manager; the help page says they 'establish the API connection through an API key or authentication token' after a commercial conversation. No self-serve signup."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST",
+        "HTTPS/JSON"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Documented RESTful API (base https://api.pitchbook.com) with relational endpoints for deals, investors, funds, people, limited partners, and service providers plus AI-powered VC exit predictor data; endpoint docs published via Postman. Official MCP: PitchBook runs an MCP gateway (mcp-proxy-external.pitchbook.com) and premium MCP server (premium.mcp.pitchbook.com/mcp) using OAuth, and announced MCP integrations with Perplexity, Anthropic, and OpenAI for subscribers."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "API access requires a standalone contract and Direct Data team / account-manager approval; no self-serve or trial credential path."
+    },
+    "evidence": {
+      "auth_url": "https://pitchbook.com/help/PitchBook-api",
+      "access_url": "https://pitchbook.com/products/direct-access-data/api",
+      "api_url": "https://pitchbook.com/help/PitchBook-api",
+      "mcp_url": "https://mcp-proxy-external.pitchbook.com/"
+    },
+    "confidence": "high",
+    "research_notes": "Verified from PitchBook's own help/product pages and press: REST API with API key/authentication token issued after a Direct Data contract, sandbox available to contracted clients, and official MCP gateway + premium MCP server + AI-partner MCP integrations (Perplexity 'Essential' MCP, OpenAI connector). Clear sales-gate; buildable only with a contract."
+  },
+  {
+    "id": 92,
+    "name": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "one_line": "AI meeting assistant that records, transcribes, and summarizes meetings with real-time notes, action items, and enterprise search.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "Public REST API is available only to Enterprise workspaces and requires contacting your Otter account manager to enable. MCP server is OAuth-based and works from a normal account, but the underlying API surface is enterprise-gated."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "official",
+      "note": "Documented Public API (api.otter.ai/v1) covers channels, conversations, transcripts, action items, insights, workspace details, and webhooks. Bearer-token API keys created in the Developer tab. Official hosted MCP server at mcp.otter.ai/mcp (OAuth)."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Public API requires an Enterprise workspace and account-manager approval; not available on self-serve or free tiers. Community MCPs that bypass this use unofficial email/password endpoints."
+    },
+    "evidence": {
+      "auth_url": "https://otter.ai/setting/developer",
+      "access_url": "https://otter.ai",
+      "api_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "mcp_url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+    },
+    "confidence": "high",
+    "research_notes": "Official help center documents the Public API (Enterprise only, Bearer key auth) and an official OAuth MCP server. Otter's own blog (2025-10-10) confirms MCP. Note: separate unrelated companies (otterab.com, tryotter.com) also brand 'Otter' but are restaurant-POS products, not Otter.ai."
+  },
+  {
+    "id": 93,
+    "name": "Fathom",
+    "category": "AI, Research and Media-native",
+    "one_line": "AI meeting notetaker that records, transcribes, and summarizes calls in real time and syncs action items and notes to CRMs.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Free-forever consumer tier plus paid plans. API keys are self-serve from User Settings (API Access section); OAuth available for building public apps for other Fathom users."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Well-documented REST API (developers.fathom.ai, api.fathom.ai/external/v1) covering meetings, recordings, transcripts, summaries, action items, teams, webhooks, plus TypeScript/Python SDKs. Official hosted MCP server at api.fathom.ai/mcp with docs at developers.fathom.ai/mcp-docs."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://fathom.video/customize#api-access-header",
+      "access_url": "https://www.fathom.ai",
+      "api_url": "https://developers.fathom.ai/quickstart",
+      "mcp_url": "https://developers.fathom.ai/mcp-docs"
+    },
+    "confidence": "high",
+    "research_notes": "developers.fathom.ai confirms self-serve X-Api-Key auth, OAuth for public apps, and an official MCP server (verified live). Multiple third-party MCP wrappers also exist (Dot-Fun/fathom-mcp, agencyenterprise/fathom-mcp-server). Note: 'Fathom' here is Fathom.fm/video the meeting notetaker, not Fathom Analytics or Fathom flood-risk."
+  },
+  {
+    "id": 94,
+    "name": "Consensus",
+    "category": "AI, Research and Media-native",
+    "one_line": "AI-powered academic search engine that returns and synthesizes answers grounded in 200M+ peer-reviewed research papers.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "admin_approval",
+      "note": "REST API is application-only ('Request access', limited availability, ~$0.10/call plus platform fee, expect a response within a week). Keys are managed from the API & MCP dashboard; the MCP endpoint is OAuth-enabled for self-serve users with plan-based call limits."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "narrow",
+      "mcp": "official",
+      "note": "Documented v1 Search/quick_search REST endpoint (docs.consensus.app, api.consensus.app) returning top papers with metadata and relevance scores. Official hosted MCP server at mcp.consensus.app/mcp (OAuth, or Bearer API key for enterprise)."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "REST API keys require an application/approval process and paid per-call pricing; not guaranteed self-serve. The official MCP endpoint is more open (OAuth) but shares the same monthly call pool with plan limits."
+    },
+    "evidence": {
+      "auth_url": "https://consensus.app/api-mcp/",
+      "access_url": "https://consensus.app/home/api/",
+      "api_url": "https://docs.consensus.app/reference/v1_search",
+      "mcp_url": "https://docs.consensus.app/docs/mcp.md"
+    },
+    "confidence": "high",
+    "research_notes": "Official help center documents key creation, x-api-key header, and shared API/MCP usage limits; API landing and subscription pages confirm application-only access. docs.consensus.app documents the MCP server URL mcp.consensus.app/mcp. Note: goconsensus.com is a separate sales-demo company with its own API."
+  },
+  {
+    "id": 95,
+    "name": "Reducto",
+    "category": "AI, Research and Media-native",
+    "one_line": "Agentic document platform that parses, extracts, classifies, splits, and edits complex documents (PDFs, DOCX, etc.) into LLM-ready JSON.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Self-serve signup with 15,000 free credits on the Standard plan, then credit-based pricing (~$0.015/credit). API keys generated in Reducto Studio; enterprise/VPC options available."
+    },
+    "api": {
+      "documented": true,
+      "protocols": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "official",
+      "note": "Fully documented REST API (docs.reducto.ai) with OpenAPI specs: parse, extract, classify, split, edit, async processing with webhooks, plus official Python/Node/Go SDKs and a CLI. Official MCP server (github.com/reductoai/mcp-server-reducto, hosted at mcp.reducto.ai)."
+    },
+    "buildability": {
+      "verdict": "buildable_today",
+      "blocker": null
+    },
+    "evidence": {
+      "auth_url": "https://studio.reducto.ai/",
+      "access_url": "https://reducto.ai/developers",
+      "api_url": "https://docs.reducto.ai/quickstart",
+      "mcp_url": "https://github.com/reductoai/mcp-server-reducto"
+    },
+    "confidence": "high",
+    "research_notes": "reducto.ai/developers and docs.reducto.ai confirm the API surface, SDKs, CLI, and MCP server; quickstart documents API-key auth (REDUCTO_API_KEY). Official GitHub org reductoai hosts the MCP server repo and SDKs."
+  },
+  {
+    "id": 99,
+    "name": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "one_line": "Open-source Python library and CLI (youtube-transcript-api) that fetches video transcripts/subtitles from YouTube without an API key.",
+    "auth_methods": [
+      "other"
+    ],
+    "access": {
+      "status": "free_self_serve",
+      "note": "Open-source (MIT) on GitHub/PyPI; no API key or account required. Optional proxy credentials (e.g. Webshare residential proxies) are supported to work around IP bans."
+    },
+    "api": {
+      "documented": false,
+      "protocols": [
+        "other"
+      ],
+      "breadth": "narrow",
+      "mcp": "none_found",
+      "note": "Not an official vendor API: it uses YouTube's undocumented web-client endpoint. Provides a Python API, CLI, and JSON/formatter outputs with translation support. No MCP server found."
+    },
+    "buildability": {
+      "verdict": "partial",
+      "blocker": "Relies on undocumented YouTube endpoints; risk of RequestBlocked/IpBlocked errors and breaking whenever YouTube changes internals, with no official Google API backing."
+    },
+    "evidence": {
+      "auth_url": "https://pypi.org/project/youtube-transcript-api/",
+      "access_url": "https://github.com/jdepoix/youtube-transcript-api",
+      "api_url": "https://github.com/jdepoix/youtube-transcript-api",
+      "mcp_url": null
+    },
+    "confidence": "high",
+    "research_notes": "jdepoix/youtube-transcript-api README explicitly states no API key or headless browser needed and that it uses an undocumented part of the YouTube API; IP-ban and proxy guidance is documented in-repo. MIT license, ~8k stars."
+  }
+]
